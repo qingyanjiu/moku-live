@@ -1,0 +1,35 @@
+.signup-div {
+  text-align: center;
+  background-color: #6495ED;
+}
+
+.signin-div {
+  text-align: center;
+  background-color: #8FBC8F;
+}
+
+form {
+  width:100%;
+  text-align: center;
+}
+
+.sign-title{
+  font-size:1.6rem;
+  font-weight: bold;
+  color:#888;
+  padding-bottom:1.6rem;
+}
+
+.sign-form-div {
+  padding:3rem 2rem 1rem;
+  background-color:#FFF;
+  border-radius: 0.5rem;
+}
+
+.forgot-pass {
+  padding-top:1rem;
+}
+
+.login-form-button {
+  margin-top:1rem;
+}

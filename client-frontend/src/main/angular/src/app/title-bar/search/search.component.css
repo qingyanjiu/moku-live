@@ -1,0 +1,4 @@
+:host ::ng-deep .ant-input-group-addon{
+  background: #FFF;
+  cursor:pointer !important;
+}

@@ -1,0 +1,56 @@
+version: '3.2'
+services:
+  viz:
+    image: bretfisher/visualizer
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    ports:
+      - "8080:8080"
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
+  live:
+    image: alaien/live-server-nginx-edge:http-flv
+    ports:
+      - 8880:80
+    deploy:
+      mode: global
+      placement:
+        constraints:
+          - node.role==manager
+      restart_policy:
+        condition: on-failure
+    environment:
+      - PULL_URL=155.94.71.151
+
+  client:
+    image: alaien/live-client-springboot:http-flv 
+    ports:
+      - 80:8000
+    deploy:
+      mode: global
+      update_config:
+        parallelism: 1
+        delay: 60s
+      placement:
+        constraints:
+          - node.role==worker
+      restart_policy:
+        condition: on-failure
+    environment:
+      - CONFIG_SERVER_URL=http://live-config.herokuapp.com/
+    networks:
+      - client    
+
+  mq:
+    image: rabbitmq
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
+    networks:
+      - client
+       
+networks:
+  client:

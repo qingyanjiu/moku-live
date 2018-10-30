@@ -1,0 +1,17 @@
+<div style="width:30%;float:left;margin:18px 0 0 10px;">
+  <nz-input-group [nzAddOnBefore]="addOnBeforeTemplate" [nzAddOnAfter]="addOnAfterTemplate">
+    <input type="text" nz-input [placeholder]="'Search '+ _type" [(ngModel)]="_value">
+  </nz-input-group>
+  <ng-template #addOnBeforeTemplate>
+    <nz-select [(ngModel)]="_type">
+      <nz-option [nzLabel]="'Web Order Id'" [nzValue]="'Web Order Id'"></nz-option>
+      <nz-option [nzLabel]="'Sub Reference ID'" [nzValue]="'Sub Reference ID'"></nz-option>
+      <nz-option [nzLabel]="'Subscription Code'" [nzValue]="'Subscription Code'"></nz-option>
+    </nz-select>
+  </ng-template>
+  <ng-template #addOnAfterTemplate>
+    <i class="anticon anticon-search" (click)="onSearch({type:_type,value:_value})"
+       style="font-weight:bold;"></i>
+  </ng-template>
+</div>
+

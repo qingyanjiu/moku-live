@@ -1,0 +1,25 @@
+<div class="liveDiv">
+  <div class="liveContent" [ngStyle]="{'margin':colMargin+'px'}">
+    <!--<div nz-row [nzGutter]="8" [nzJustify]="'start'" [nzType]="'flex'">-->
+
+    <span *ngFor="let live of lives">
+      <nz-card class="live-col" nzHoverable [nzCover]="coverTemplate" [ngStyle]="{'width':colWidth+'px'}">
+        <nz-card-meta [nzTitle]="live.liveName" [nzDescription]="'主播：'+live.userName"></nz-card-meta>
+      </nz-card>
+      <ng-template #coverTemplate>
+        <img [attr.alt]="live.liveName" [attr.src]="snapshoturl+live.streamCode+'.png'"
+             onerror="javascript:this.src='assets/img/empty-cover.png';"
+        />
+        <div *ngIf="live.status === '9'"
+             style="position:absolute;top:0;right:0;height:2rem;width:2rem;background-color: #ff923f">
+          <i class="anticon anticon-youtube" style="color:#FFF;font-size:1.2rem;padding:0.4rem"></i>
+        </div>
+        <div *ngIf="live.password"
+             style="position:absolute;top:0;left:0;height:2rem;width:2rem;background-color: #ff7064">
+          <i class="anticon anticon-lock" style="color:#FFF;font-size:1.4rem;padding:0.3rem"></i>
+        </div>
+      </ng-template>
+    </span>
+
+  </div>
+</div>

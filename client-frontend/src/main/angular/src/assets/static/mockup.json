@@ -1,0 +1,1148 @@
+{
+  "82994783": {
+    "lifeCycleNames": [
+      "New Order",
+      "Order in Progress",
+      "Pending Provision",
+      "Provision Completion",
+      "Pending Activation",
+      "End Complete"
+    ],
+    "requests": {
+      "New Order": [
+        {
+          "time": "2018-04-04T21:11:53.514Z",
+          "serviceCode": "RESERVE_SUBSCRIPTION",
+          "serviceName": "Reserve Subscription Code",
+          "from": "OPL",
+          "to": "SOL",
+          "responseTime": 79,
+          "result": "SUCCESS"
+        },
+        {
+          "time": "2018-04-04T21:15:21.287Z",
+          "serviceCode": "VALIDATE_PENDING_SUBSCRIPTION",
+          "serviceName": "Validate whether have Pending Subscription",
+          "from": "SOL",
+          "to": "SOL",
+          "responseTime": 7,
+          "result": "SUCCESS"
+        },
+        {
+          "time": "2018-04-04T21:15:21.371Z",
+          "serviceCode": "VALIDATE_CREATE_GETSERVICEORDER_3",
+          "serviceName": "Order Validation inside SFL before Submit",
+          "from": "SOL",
+          "to": "SFL",
+          "responseTime": 90,
+          "result": "SUCCESS"
+        },
+        {
+          "time": "2018-04-04T21:15:21.595Z",
+          "serviceCode": "VALIDATE_3_BRM",
+          "serviceName": "Validate Order inside BRM before Submit Order",
+          "from": "SOL",
+          "to": "BRM",
+          "responseTime": 313,
+          "result": "SUCCESS"
+        },
+        {
+          "time": "2018-04-04T21:15:21.597Z",
+          "serviceCode": "VALIDATE_ORDER",
+          "serviceName": "Complete Workflow to Validate Order",
+          "from": "OPL",
+          "to": "SOL",
+          "responseTime": 336,
+          "result": "SUCCESS"
+        },
+        {
+          "time": "2018-04-04T21:15:22.132Z",
+          "serviceCode": "PROCESS_ORDER",
+          "serviceName": "Start Workflow to Process Order",
+          "from": "OPL",
+          "to": "SOL",
+          "responseTime": 878,
+          "result": "SUCCESS"
+        },
+        {
+          "time": "2018-04-04T21:15:22.133Z",
+          "serviceCode": "CREATE_ORDER",
+          "serviceName": "Create Order",
+          "from": "SOL",
+          "to": "SOL",
+          "responseTime": 509,
+          "result": "SUCCESS"
+        },
+        {
+          "time": "2018-04-04T21:15:22.140Z",
+          "serviceCode": "OPL_FULFILLMENT_HOLD_RELEASE_V2",
+          "serviceName": "Release OPL Hold",
+          "from": "OPL",
+          "to": "SOL",
+          "responseTime": 907,
+          "result": "SUCCESS"
+        },
+        {
+          "time": "2018-04-04T21:15:22.156Z",
+          "serviceCode": "UPDATEORDERSTATUS_ORDERINPROGRESS_30",
+          "serviceName": "Update Order Status to In Progress",
+          "from": "OPL",
+          "to": "SOL",
+          "responseTime": 16,
+          "result": "SUCCESS"
+        }
+      ],
+      "Order in Progress": [
+        {
+          "time": "2018-04-04T21:15:22.703Z",
+          "serviceCode": "OPL_STATUS_SYNC_BACK",
+          "serviceName": "OPL Status Sync Back",
+          "from": "SOL",
+          "to": "OPL",
+          "responseTime": 552,
+          "result": "SUCCESS"
+        },
+        {
+          "time": "2018-04-04T21:15:23.013Z",
+          "serviceCode": "INVOKE_PROVISIONING",
+          "serviceName": "Start to Provisioning",
+          "from": "SOL",
+          "to": "SFL",
+          "responseTime": 851,
+          "result": "SUCCESS"
+        },
+        {
+          "time": "2018-04-04T21:15:25.836Z",
+          "serviceCode": "PI_WEBEX_DC",
+          "serviceName": "Atlas call for decoupled provisioning",
+          "from": "SFL",
+          "to": "Atlas",
+          "responseTime": 2410,
+          "result": "SUCCESS"
+        },
+        {
+          "time": "2018-04-04T21:15:29.714Z",
+          "serviceCode": "OPL_STATUS_SYNC_BACK",
+          "serviceName": "OPL Status Sync Back",
+          "from": "SOL",
+          "to": "OPL",
+          "responseTime": 6691,
+          "result": "SUCCESS"
+        },
+        {
+          "time": "2018-04-04T21:15:29.729Z",
+          "serviceCode": "UPDATEORDERSTATUS_PENDINGPROVISIONING_11",
+          "serviceName": "Wait Step in SOL - Await Provision Completion",
+          "from": "SOL",
+          "to": "SOL",
+          "responseTime": 6706,
+          "result": "SUCCESS"
+        }
+      ],
+      "Pending Provision": [
+        {
+          "time": "2018-04-04T21:15:30.564Z",
+          "serviceCode": "/callback/atlas/activatesubscription",
+          "serviceName": "Atlas Call Back",
+          "from": "Atlas",
+          "to": "SFL",
+          "responseTime": 0,
+          "result": "SUCCESS"
+        },
+        {
+          "time": "2018-04-04T21:15:34.094Z",
+          "serviceCode": "SOL_CALLBACK",
+          "serviceName": "SOL Callback",
+          "from": "SFL",
+          "to": "SOL",
+          "responseTime": 313,
+          "result": "SUCCESS"
+        },
+        {
+          "time": "2018-04-04T21:15:37.127Z",
+          "serviceCode": "UPDATE_MAJORLINE_STATUS_SFL",
+          "serviceName": "Update Marjor Line Status in SFL",
+          "from": "SFL",
+          "to": "SOL",
+          "responseTime": 6230,
+          "result": "SUCCESS"
+        },
+        {
+          "time": "2018-04-04T21:15:37.130Z",
+          "serviceCode": "OPL_STATUS_SYNC_BACK",
+          "serviceName": "OPL Status Sync Back",
+          "from": "SOL",
+          "to": "OPL",
+          "responseTime": 6216,
+          "result": "SUCCESS"
+        },
+        {
+          "time": "2018-04-04T21:15:43.013Z",
+          "serviceCode": "OPL_STATUS_SYNC_BACK",
+          "serviceName": "OPL Status Sync Back",
+          "from": "SOL",
+          "to": "OPL",
+          "responseTime": 8933,
+          "result": "SUCCESS"
+        },
+        {
+          "time": "2018-04-04T21:15:43.024Z",
+          "serviceCode": "UPDATEORDERSTATUS_PROV_COMPLETE_34",
+          "serviceName": "Update Order Status to Provision Complete",
+          "from": "SOL",
+          "to": "SOL",
+          "responseTime": 8959,
+          "result": "SUCCESS"
+        }
+      ],
+      "Provision Completion": [
+        {
+          "time": "2018-04-04T21:15:52.492Z",
+          "serviceCode": "OPL_ACTIVATION_HOLD_RELEASE_V2",
+          "serviceName": "Release OPL Activation",
+          "from": "OPL",
+          "to": "SOL",
+          "responseTime": 184,
+          "result": "SUCCESS"
+        },
+        {
+          "time": "2018-04-04T21:15:58.447Z",
+          "serviceCode": "OPL_STATUS_SYNC_BACK",
+          "serviceName": "OPL Status Sync Back",
+          "from": "SOL",
+          "to": "OPL",
+          "responseTime": 5950,
+          "result": "SUCCESS"
+        },
+        {
+          "time": "2018-04-04T21:15:58.458Z",
+          "serviceCode": "UPDATEORDERSTATUS_PENDINGACTIVATION_14",
+          "serviceName": "Update Order Status to Pending Activation",
+          "from": "SOL",
+          "to": "SOL",
+          "responseTime": 5960,
+          "result": "SUCCESS"
+        }
+      ],
+      "Pending Activation": [
+        {
+          "time": "2018-04-04T21:15:58.946Z",
+          "serviceCode": "FULFILL_SUBSCRIPTION",
+          "serviceName": "Fulfill Subscription",
+          "from": "SOL",
+          "to": "BRM",
+          "responseTime": 471,
+          "result": "SUCCESS"
+        },
+        {
+          "time": "2018-04-04T21:15:58.951Z",
+          "serviceCode": "FULFILL_ORDER",
+          "serviceName": "Fulfill Order inside SVSPRD",
+          "from": "SOL",
+          "to": "SOL",
+          "responseTime": 480,
+          "result": "SUCCESS"
+        },
+        {
+          "time": "2018-04-11T21:15:06.768Z",
+          "serviceCode": "INCIDENT_SERVICES",
+          "serviceName": "Follow SERVICE NOW Incident to reslove the failure",
+          "from": "SOL",
+          "to": "Other BU",
+          "responseTime": 4949,
+          "result": "SUCCESS"
+        },
+        {
+          "time": "2018-04-11T21:15:06.793Z",
+          "serviceCode": "Event.FulfillSubscription",
+          "serviceName": "Create Event Notification to Fulfill Subscription",
+          "from": "BRM",
+          "to": "SOL",
+          "responseTime": 5014,
+          "result": "SUCCESS"
+        },
+        {
+          "time": "2018-04-11T21:15:06.807Z",
+          "serviceCode": "FULLFILL_FAILURE_NOTIFICATION",
+          "serviceName": "Send Subscription Fulfill Failure Notification",
+          "from": "SOL",
+          "to": "SOL",
+          "responseTime": 19,
+          "result": "ERROR"
+        },
+        {
+          "time": "2018-04-11T21:30:01.990Z",
+          "serviceCode": "Event.FulfillSubscription",
+          "serviceName": "Create Event Notification to Fulfill Subscription",
+          "from": "BRM",
+          "to": "SOL",
+          "responseTime": 129,
+          "result": "SUCCESS"
+        },
+        {
+          "time": "2018-04-11T21:30:01.998Z",
+          "serviceCode": "FULLFILL_SUCCESS_NOTIFICATION",
+          "serviceName": "Send Subscription Fullfill Success Notification",
+          "from": "SOL",
+          "to": "SOL",
+          "responseTime": 128,
+          "result": "SUCCESS"
+        },
+        {
+          "time": "2018-04-11T21:30:13.179Z",
+          "serviceCode": "OPL_STATUS_SYNC_BACK",
+          "serviceName": "OPL Status Sync Back",
+          "from": "SOL",
+          "to": "OPL",
+          "responseTime": 11154,
+          "result": "SUCCESS"
+        },
+        {
+          "time": "2018-04-11T21:30:13.202Z",
+          "serviceCode": "UPDATEORDERSTATUS_ENDCOMPLETE_20",
+          "serviceName": "Update Order Status to End Complete",
+          "from": "SOL",
+          "to": "SOL",
+          "responseTime": 11188,
+          "result": "SUCCESS"
+        }
+      ]
+    },
+    "layerRequests": [
+      {
+        "lifeCycle": "New Order",
+        "time": "2018-04-04T21:11:53.514Z",
+        "serviceCode": "RESERVE_SUBSCRIPTION",
+        "serviceName": "Reserve Subscription Code",
+        "from": "OPL",
+        "to": "SOL",
+        "responseTime": 79,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "New Order",
+        "time": "2018-04-04T21:15:21.287Z",
+        "serviceCode": "VALIDATE_PENDING_SUBSCRIPTION",
+        "serviceName": "Validate whether have Pending Subscription",
+        "from": "SOL",
+        "to": "SOL",
+        "responseTime": 7,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "New Order",
+        "time": "2018-04-04T21:15:21.371Z",
+        "serviceCode": "VALIDATE_CREATE_GETSERVICEORDER_3",
+        "serviceName": "Order Validation inside SFL before Submit",
+        "from": "SOL",
+        "to": "SFL",
+        "responseTime": 90,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "New Order",
+        "time": "2018-04-04T21:15:21.595Z",
+        "serviceCode": "VALIDATE_3_BRM",
+        "serviceName": "Validate Order inside BRM before Submit Order",
+        "from": "SOL",
+        "to": "BRM",
+        "responseTime": 313,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "New Order",
+        "time": "2018-04-04T21:15:21.597Z",
+        "serviceCode": "VALIDATE_ORDER",
+        "serviceName": "Complete Workflow to Validate Order",
+        "from": "OPL",
+        "to": "SOL",
+        "responseTime": 336,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "New Order",
+        "time": "2018-04-04T21:15:22.132Z",
+        "serviceCode": "PROCESS_ORDER",
+        "serviceName": "Start Workflow to Process Order",
+        "from": "OPL",
+        "to": "SOL",
+        "responseTime": 878,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "New Order",
+        "time": "2018-04-04T21:15:22.133Z",
+        "serviceCode": "CREATE_ORDER",
+        "serviceName": "Create Order",
+        "from": "SOL",
+        "to": "SOL",
+        "responseTime": 509,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "New Order",
+        "time": "2018-04-04T21:15:22.140Z",
+        "serviceCode": "OPL_FULFILLMENT_HOLD_RELEASE_V2",
+        "serviceName": "Release OPL Hold",
+        "from": "OPL",
+        "to": "SOL",
+        "responseTime": 907,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "New Order",
+        "time": "2018-04-04T21:15:22.156Z",
+        "serviceCode": "UPDATEORDERSTATUS_ORDERINPROGRESS_30",
+        "serviceName": "Update Order Status to In Progress",
+        "from": "SOL",
+        "to": "SOL",
+        "responseTime": 16,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "Order in Progress",
+        "time": "2018-04-04T21:15:22.703Z",
+        "serviceCode": "OPL_STATUS_SYNC_BACK",
+        "serviceName": "OPL Status Sync Back",
+        "from": "SOL",
+        "to": "OPL",
+        "responseTime": 552,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "Order in Progress",
+        "time": "2018-04-04T21:15:23.013Z",
+        "serviceCode": "INVOKE_PROVISIONING",
+        "serviceName": "Start to Provisioning",
+        "from": "SOL",
+        "to": "SFL",
+        "responseTime": 851,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "Order in Progress",
+        "time": "2018-04-04T21:15:25.836Z",
+        "serviceCode": "PI_WEBEX_DC",
+        "serviceName": "Atlas call for decoupled provisioning",
+        "from": "SFL",
+        "to": "Atlas",
+        "responseTime": 2410,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "Order in Progress",
+        "time": "2018-04-04T21:15:29.714Z",
+        "serviceCode": "OPL_STATUS_SYNC_BACK",
+        "serviceName": "OPL Status Sync Back",
+        "from": "SOL",
+        "to": "OPL",
+        "responseTime": 6691,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "Order in Progress",
+        "time": "2018-04-04T21:15:29.729Z",
+        "serviceCode": "UPDATEORDERSTATUS_PENDINGPROVISIONING_11",
+        "serviceName": "Wait Step in SOL - Await Provision Completion",
+        "from": "SOL",
+        "to": "SOL",
+        "responseTime": 6706,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "Pending Provision",
+        "time": "2018-04-04T21:15:30.564Z",
+        "serviceCode": "/callback/atlas/activatesubscription",
+        "serviceName": "Atlas Call Back",
+        "from": "Atlas",
+        "to": "SFL",
+        "responseTime": 0,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "Pending Provision",
+        "time": "2018-04-04T21:15:34.094Z",
+        "serviceCode": "SOL_CALLBACK",
+        "serviceName": "SOL Callback",
+        "from": "SFL",
+        "to": "SOL",
+        "responseTime": 313,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "Pending Provision",
+        "time": "2018-04-04T21:15:37.127Z",
+        "serviceCode": "UPDATE_MAJORLINE_STATUS_SFL",
+        "serviceName": "Update Marjor Line Status in SFL",
+        "from": "SFL",
+        "to": "SOL",
+        "responseTime": 6230,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "Pending Provision",
+        "time": "2018-04-04T21:15:37.130Z",
+        "serviceCode": "OPL_STATUS_SYNC_BACK",
+        "serviceName": "OPL Status Sync Back",
+        "from": "SOL",
+        "to": "OPL",
+        "responseTime": 6216,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "Pending Provision",
+        "time": "2018-04-04T21:15:43.013Z",
+        "serviceCode": "OPL_STATUS_SYNC_BACK",
+        "serviceName": "OPL Status Sync Back",
+        "from": "SOL",
+        "to": "OPL",
+        "responseTime": 8933,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "Pending Provision",
+        "time": "2018-04-04T21:15:43.024Z",
+        "serviceCode": "UPDATEORDERSTATUS_PROV_COMPLETE_34",
+        "serviceName": "Update Order Status to Provision Complete",
+        "from": "SOL",
+        "to": "SOL",
+        "responseTime": 8959,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "Provision Completion",
+        "time": "2018-04-04T21:15:52.492Z",
+        "serviceCode": "OPL_ACTIVATION_HOLD_RELEASE_V2",
+        "serviceName": "Release OPL Activation",
+        "from": "OPL",
+        "to": "SOL",
+        "responseTime": 184,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "Provision Completion",
+        "time": "2018-04-04T21:15:58.447Z",
+        "serviceCode": "OPL_STATUS_SYNC_BACK",
+        "serviceName": "OPL Status Sync Back",
+        "from": "SOL",
+        "to": "OPL",
+        "responseTime": 5950,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "Provision Completion",
+        "time": "2018-04-04T21:15:58.458Z",
+        "serviceCode": "UPDATEORDERSTATUS_PENDINGACTIVATION_14",
+        "serviceName": "Update Order Status to Pending Activation",
+        "from": "SOL",
+        "to": "SOL",
+        "responseTime": 5960,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "Pending Activation",
+        "time": "2018-04-04T21:15:58.946Z",
+        "serviceCode": "FULFILL_SUBSCRIPTION",
+        "serviceName": "Fulfill Subscription",
+        "from": "SOL",
+        "to": "BRM",
+        "responseTime": 471,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "Pending Activation",
+        "time": "2018-04-04T21:15:58.951Z",
+        "serviceCode": "FULFILL_ORDER",
+        "serviceName": "Fulfill Order",
+        "from": "SOL",
+        "to": "SOL",
+        "responseTime": 480,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "Pending Activation",
+        "time": "2018-04-11T21:15:06.768Z",
+        "serviceCode": "INCIDENT_SERVICES",
+        "serviceName": "Follow SERVICE NOW Incident to reslove the failure",
+        "from": "SOL",
+        "to": "Other BU",
+        "responseTime": 4949,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "Pending Activation",
+        "time": "2018-04-11T21:15:06.793Z",
+        "serviceCode": "Event.FulfillSubscription",
+        "serviceName": "Create Event Notification to Fulfill Subscription",
+        "from": "BRM",
+        "to": "SOL",
+        "responseTime": 5014,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "Pending Activation",
+        "time": "2018-04-11T21:15:06.807Z",
+        "serviceCode": "FULLFILL_FAILURE_NOTIFICATION",
+        "serviceName": "Send Subscription Fulfill Failure Notification",
+        "from": "SOL",
+        "to": "SOL",
+        "responseTime": 19,
+        "result": "ERROR"
+      },
+      {
+        "lifeCycle": "Pending Activation",
+        "time": "2018-04-11T21:30:01.990Z",
+        "serviceCode": "Event.FulfillSubscription",
+        "serviceName": "Create Event Notification to Fulfill Subscription",
+        "from": "BRM",
+        "to": "SOL",
+        "responseTime": 129,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "Pending Activation",
+        "time": "2018-04-11T21:30:01.998Z",
+        "serviceCode": "FULLFILL_SUCCESS_NOTIFICATION",
+        "serviceName": "Send Subscription Fullfill Success Notification",
+        "from": "SOL",
+        "to": "SOL",
+        "responseTime": 128,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "Pending Activation",
+        "time": "2018-04-11T21:30:13.179Z",
+        "serviceCode": "OPL_STATUS_SYNC_BACK",
+        "serviceName": "OPL Status Sync Back",
+        "from": "SOL",
+        "to": "OPL",
+        "responseTime": 11154,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "Pending Activation",
+        "time": "2018-04-11T21:30:13.202Z",
+        "serviceCode": "UPDATEORDERSTATUS_ENDCOMPLETE_20",
+        "serviceName": "Update Order Status to End Complete",
+        "from": "SOL",
+        "to": "SOL",
+        "responseTime": 11188,
+        "result": "SUCCESS"
+      }
+    ],
+    "currentLayer": "End Complete",
+    "layerCost": [
+      "3m64s",
+      "7s",
+      "9s",
+      "7s",
+      "14m"
+    ],
+    "orderInfo": [
+      {
+        "info": "Web Order ID",
+        "detail": "82895826"
+      },
+      {
+        "info": "CCW Order Line ID",
+        "detail": "136520832"
+      },
+      {
+        "info": "End Customer ID",
+        "detail": ""
+      },
+      {
+        "info": "Sub Reference ID",
+        "detail": "Sub108482"
+      },
+      {
+        "info": "Plan Code",
+        "detail": "A-SPK-NAMED-USER"
+      },
+      {
+        "info": "Order Type",
+        "detail": "MANUAL - RENEWAL"
+      },
+      {
+        "info": "Order Status",
+        "detail": "END_COMPLETED"
+      },
+      {
+        "info": "RSD",
+        "detail": "2018-04-04"
+      },
+      {
+        "info": "Site URL",
+        "detail": "xxx.webex.com"
+      },
+      {
+        "info": "Offer Type",
+        "detail": "SPKCLD"
+      }
+    ],
+    "diagnoseInfo": {
+      "serviceName": "FULLFILL_FAILURE_NOTIFICATION",
+      "status": "Closed",
+      "trackOwner": "BRM",
+      "time": "2018-4-12",
+      "errorCode": "113",
+      "errorMessage": "Got unkown errors for WBX_OP_FULFILL_SUBSCRIPTION"
+    }
+  },
+  "83025113": {
+    "lifeCycleNames": [
+      "New Order",
+      "Order in Progress",
+      "Pending Deprovision",
+      "Deprovision Completion",
+      "Pending Deactivation",
+      "End Complete"
+    ],
+    "requests": {
+      "New Order": [
+        {
+          "time": "2018-04-27T18:35:58.136Z",
+          "serviceCode": "VALIDATE_PENDING_SUBSCRIPTION",
+          "serviceName": "Validate whether have Pending Subscription",
+          "from": "SOL",
+          "to": "SOL",
+          "responseTime": 5,
+          "result": "SUCCESS"
+        },
+        {
+          "time": "2018-04-27T18:35:58.224Z",
+          "serviceCode": "VALIDATE_3_BRM",
+          "serviceName": "Validate Order inside BRM before Submit Order",
+          "from": "SOL",
+          "to": "BRM",
+          "responseTime": 92,
+          "result": "SUCCESS"
+        },
+        {
+          "time": "2018-04-27T18:35:58.227Z",
+          "serviceCode": "VALIDATE_CREATE_GETSERVICEORDER_3",
+          "serviceName": "Order Validation inside SFL before Submit",
+          "from": "OPL",
+          "to": "SFL",
+          "responseTime": 86,
+          "result": "SUCCESS"
+        },
+        {
+          "time": "2018-04-27T18:35:58.234Z",
+          "serviceCode": "VALIDATE_ORDER",
+          "serviceName": "Finish Workflow to Validate Order",
+          "from": "OPL",
+          "to": "SOL",
+          "responseTime": 100,
+          "result": "SUCCESS"
+        },
+        {
+          "time": "2018-04-27T18:35:58.440Z",
+          "serviceCode": "CREATE_ORDER",
+          "serviceName": "Create Order",
+          "from": "SOL",
+          "to": "SOL",
+          "responseTime": 202,
+          "result": "SUCCESS"
+        },
+        {
+          "time": "2018-04-27T18:35:58.448Z",
+          "serviceCode": "UPDATEORDERSTATUS_ORDERINPROGRESS_30",
+          "serviceName": "Update Order Status to In Progress",
+          "from": "OPL",
+          "to": "SOL",
+          "responseTime": 6,
+          "result": "SUCCESS"
+        }
+      ],
+      "Order in Progress": [
+        {
+          "time": "2018-04-27T18:35:58.448Z",
+          "serviceCode": "PROCESS_ORDER",
+          "serviceName": "Start Workflow to Process Order",
+          "from": "OPL",
+          "to": "SOL",
+          "responseTime": 314,
+          "result": "SUCCESS"
+        },
+        {
+          "time": "2018-04-27T18:35:58.455Z",
+          "serviceCode": "MANAGER_RELEASE_HOLD",
+          "serviceName": "Manager Release Hold",
+          "from": "OPL",
+          "to": "SOL",
+          "responseTime": 2,
+          "result": "SUCCESS"
+        },
+        {
+          "time": "2018-04-27T18:35:58.461Z",
+          "serviceCode": "MANAGER_APPROVAL",
+          "serviceName": "Manager Approval",
+          "from": "OPL",
+          "to": "SOL",
+          "responseTime": 1,
+          "result": "ERROR"
+        },
+        {
+          "time": "2018-04-27T18:35:58.470Z",
+          "serviceCode": "OPL_HOLD",
+          "serviceName": "OPL hod for Cancel Subscription from SSW",
+          "from": "SOL",
+          "to": "SOL",
+          "responseTime": 0,
+          "result": "SUCCESS"
+        },
+        {
+          "time": "2018-04-27T18:35:59.067Z",
+          "serviceCode": "OPL_STATUS_SYNC_BACK",
+          "serviceName": "OPL Status Sync Back",
+          "from": "SOL",
+          "to": "OPL",
+          "responseTime": 622,
+          "result": "SUCCESS"
+        },
+        {
+          "time": "2018-04-28T07:04:08.287Z",
+          "serviceCode": "OPL_FULFILLMENT_HOLD_RELEASE_V2",
+          "serviceName": "Release OPL Hold",
+          "from": "OPL",
+          "to": "SOL",
+          "responseTime": 115,
+          "result": "SUCCESS"
+        },
+        {
+          "time": "2018-04-28T07:04:08.441Z",
+          "serviceCode": "INVOKE_PROVISIONING",
+          "serviceName": "Start to Provisioning",
+          "from": "SOL",
+          "to": "SFL",
+          "responseTime": 157,
+          "result": "ERROR"
+        },
+        {
+          "time": "2018-04-28T07:04:09.436Z",
+          "serviceCode": "OPL_STATUS_SYNC_BACK",
+          "serviceName": "OPL Status Sync Back",
+          "from": "SOL",
+          "to": "OPL",
+          "responseTime": 971,
+          "result": "SUCCESS"
+        },
+        {
+          "time": "2018-04-28T07:25:41.553Z",
+          "serviceCode": "INVOKE_PROVISIONING",
+          "serviceName": "Start to Provisioning",
+          "from": "SOL",
+          "to": "SFL",
+          "responseTime": 98,
+          "result": "ERROR"
+        },
+        {
+          "time": "2018-04-28T07:25:42.143Z",
+          "serviceCode": "OPL_STATUS_SYNC_BACK",
+          "serviceName": "OPL Status Sync Back",
+          "from": "SOL",
+          "to": "OPL",
+          "responseTime": 547,
+          "result": "SUCCESS"
+        },
+        {
+          "time": "2018-05-04T18:35:35.257Z",
+          "serviceCode": "INVOKE_PROVISIONING",
+          "serviceName": "Start to Provisioning",
+          "from": "SOL",
+          "to": "SFL",
+          "responseTime": 1168,
+          "result": "SUCCESS"
+        },
+        {
+          "time": "2018-05-04T18:35:35.262Z",
+          "serviceCode": "UPDATEORDERSTATUS_PENDINGDEPROVISIONING_211",
+          "serviceName": "Update Order Status to Pending Provisioning - Deactivation Site",
+          "from": "SOL",
+          "to": "SOL",
+          "responseTime": 13,
+          "result": "SUCCESS"
+        }
+      ],
+      "Pending Deprovision": [
+        {
+          "time": "2018-05-04T18:35:35.685Z",
+          "serviceCode": "PI_CDVR_STANDARD_MANUAL",
+          "serviceName": "Send CDVR Manual Deprovision Request Email",
+          "from": "SFL",
+          "to": "Other BU",
+          "responseTime": 100,
+          "result": "SUCCESS"
+        },
+        {
+          "time": "2018-05-04T18:35:37.590Z",
+          "serviceCode": "OPL_STATUS_SYNC_BACK",
+          "serviceName": "OPL Status Sync Back",
+          "from": "SOL",
+          "to": "OPL",
+          "responseTime": 2329,
+          "result": "SUCCESS"
+        }
+      ]
+    },
+    "layerRequests": [
+      {
+        "lifeCycle": "New Order",
+        "time": "2018-04-27T18:35:58.136Z",
+        "serviceCode": "VALIDATE_PENDING_SUBSCRIPTION",
+        "serviceName": "Validate whether have Pending Subscription",
+        "from": "SOL",
+        "to": "SOL",
+        "responseTime": 5,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "New Order",
+        "time": "2018-04-27T18:35:58.224Z",
+        "serviceCode": "VALIDATE_3_BRM",
+        "serviceName": "Validate Order inside BRM before Submit Order",
+        "from": "SOL",
+        "to": "BRM",
+        "responseTime": 92,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "New Order",
+        "time": "2018-04-27T18:35:58.227Z",
+        "serviceCode": "VALIDATE_CREATE_GETSERVICEORDER_3",
+        "serviceName": "Order Validation inside SFL before Submit",
+        "from": "OPL",
+        "to": "SFL",
+        "responseTime": 86,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "New Order",
+        "time": "2018-04-27T18:35:58.234Z",
+        "serviceCode": "VALIDATE_ORDER",
+        "serviceName": "Finish Workflow to Validate Order",
+        "from": "OPL",
+        "to": "SOL",
+        "responseTime": 100,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "New Order",
+        "time": "2018-04-27T18:35:58.440Z",
+        "serviceCode": "CREATE_ORDER",
+        "serviceName": "Create Order",
+        "from": "SOL",
+        "to": "SOL",
+        "responseTime": 202,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "New Order",
+        "time": "2018-04-27T18:35:58.448Z",
+        "serviceCode": "UPDATEORDERSTATUS_ORDERINPROGRESS_30",
+        "serviceName": "Update Order Status to In Progress",
+        "from": "OPL",
+        "to": "SOL",
+        "responseTime": 6,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "Order in Progress",
+        "time": "2018-04-27T18:35:58.448Z",
+        "serviceCode": "PROCESS_ORDER",
+        "serviceName": "Start Workflow to Process Order",
+        "from": "OPL",
+        "to": "SOL",
+        "responseTime": 314,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "Order in Progress",
+        "time": "2018-04-27T18:35:58.455Z",
+        "serviceCode": "MANAGER_RELEASE_HOLD",
+        "serviceName": "Manager Release Hold",
+        "from": "OPL",
+        "to": "SOL",
+        "responseTime": 2,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "Order in Progress",
+        "time": "2018-04-27T18:35:58.461Z",
+        "serviceCode": "MANAGER_APPROVAL",
+        "serviceName": "Manager Approval",
+        "from": "OPL",
+        "to": "SOL",
+        "responseTime": 1,
+        "result": "ERROR"
+      },
+      {
+        "lifeCycle": "Order in Progress",
+        "time": "2018-04-27T18:35:58.470Z",
+        "serviceCode": "OPL_HOLD",
+        "serviceName": "OPL hod for Cancel Subscription from SSW",
+        "from": "SOL",
+        "to": "SOL",
+        "responseTime": 0,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "Order in Progress",
+        "time": "2018-04-27T18:35:59.067Z",
+        "serviceCode": "OPL_STATUS_SYNC_BACK",
+        "serviceName": "OPL Status Sync Back",
+        "from": "SOL",
+        "to": "OPL",
+        "responseTime": 622,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "Order in Progress",
+        "time": "2018-04-28T07:04:08.287Z",
+        "serviceCode": "OPL_FULFILLMENT_HOLD_RELEASE_V2",
+        "serviceName": "Release OPL Hold",
+        "from": "OPL",
+        "to": "SOL",
+        "responseTime": 115,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "Order in Progress",
+        "time": "2018-04-28T07:04:08.441Z",
+        "serviceCode": "INVOKE_PROVISIONING",
+        "serviceName": "Start to Provisioning",
+        "from": "SOL",
+        "to": "SFL",
+        "responseTime": 157,
+        "result": "ERROR"
+      },
+      {
+        "lifeCycle": "Order in Progress",
+        "time": "2018-04-28T07:04:09.436Z",
+        "serviceCode": "OPL_STATUS_SYNC_BACK",
+        "serviceName": "OPL Status Sync Back",
+        "from": "SOL",
+        "to": "OPL",
+        "responseTime": 971,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "Order in Progress",
+        "time": "2018-04-28T07:25:41.553Z",
+        "serviceCode": "INVOKE_PROVISIONING",
+        "serviceName": "Start to Provisioning",
+        "from": "SOL",
+        "to": "SFL",
+        "responseTime": 98,
+        "result": "ERROR"
+      },
+      {
+        "lifeCycle": "Order in Progress",
+        "time": "2018-04-28T07:25:42.143Z",
+        "serviceCode": "OPL_STATUS_SYNC_BACK",
+        "serviceName": "OPL Status Sync Back",
+        "from": "SOL",
+        "to": "OPL",
+        "responseTime": 547,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "Order in Progress",
+        "time": "2018-05-04T18:35:35.257Z",
+        "serviceCode": "INVOKE_PROVISIONING",
+        "serviceName": "Start to Provisioning",
+        "from": "SOL",
+        "to": "SFL",
+        "responseTime": 1168,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "Order in Progress",
+        "time": "2018-05-04T18:35:35.262Z",
+        "serviceCode": "UPDATEORDERSTATUS_PENDINGDEPROVISIONING_211",
+        "serviceName": "Update Order Status to Pending Provisioning - Deactivation Site",
+        "from": "SOL",
+        "to": "SOL",
+        "responseTime": 13,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "Pending Deprovision",
+        "time": "2018-05-04T18:35:35.685Z",
+        "serviceCode": "PI_CDVR_STANDARD_MANUAL",
+        "serviceName": "Send CDVR Manual Deprovision Request Email",
+        "from": "SFL",
+        "to": "Other BU",
+        "responseTime": 100,
+        "result": "SUCCESS"
+      },
+      {
+        "lifeCycle": "Pending Deprovision",
+        "time": "2018-05-04T18:35:37.590Z",
+        "serviceCode": "OPL_STATUS_SYNC_BACK",
+        "serviceName": "OPL Status Sync Back",
+        "from": "SOL",
+        "to": "OPL",
+        "responseTime": 2329,
+        "result": "SUCCESS"
+      }
+    ],
+    "currentLayer": "Pending Deprovision",
+    "layerCost": [
+      "1s",
+      "7d",
+      "5d"
+    ],
+    "orderInfo": [
+      {
+        "info": "Web Order ID",
+        "detail": "83025113"
+      },
+      {
+        "info": "CCW Order Line ID",
+        "detail": "138689693"
+      },
+      {
+        "info": "End Customer ID",
+        "detail": ""
+      },
+      {
+        "info": "Sub Reference ID",
+        "detail": "Sub142239"
+      },
+      {
+        "info": "Plan Code",
+        "detail": "A-2CDVRTS-ATO"
+      },
+      {
+        "info": "Order Type",
+        "detail": "CHANGE - CANCEL"
+      },
+      {
+        "info": "Order Status",
+        "detail": "Pending Deprovision"
+      },
+      {
+        "info": "RSD",
+        "detail": "2018-04-28"
+      },
+      {
+        "info": "Site URL",
+        "detail": "xxx.webex.com"
+      },
+      {
+        "info": "Offer Type",
+        "detail": "CDVR"
+      }
+    ],
+    "diagnoseInfo": {
+      "serviceName": "INVOKE_PROVISIONING",
+      "status": "Closed",
+      "trackOwner": "SFL",
+      "time": "2018-4-28",
+      "errorCode": "PVS-INT-USR-001",
+      "errorMessage": "There is already an order with subscription code 'SubC143875' that is pending provisioning"
+    }
+  }
+}

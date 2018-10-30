@@ -1,0 +1,8 @@
+version: '3.2'
+services:
+  poc:
+    image: poc-zorro-v7:latest
+    volumes:
+      - /c/dev/poc-dev:/root/poc/src/main/angular
+    ports:
+      - 4200:4200

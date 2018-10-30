@@ -1,0 +1,13 @@
+.title-menu {
+  font-size:26px;
+  margin:20px 36px 20px 0px;
+  color:#FFF;
+  cursor:pointer;
+}
+
+.title-menu:hover {
+  font-size:26px;
+  margin:20px 36px 20px 0px;
+  color:rgba(255,255,255,0.6);
+  cursor:pointer;
+}

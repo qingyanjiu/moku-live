@@ -1,0 +1,33 @@
+body {
+  font-family:"Helvetica Neue For Number", -apple-system, BlinkMacSystemFont,
+  "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+  "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+:host ::ng-deep .ant-layout-footer {
+  padding:16px
+}
+
+:host ::ng-deep .main {
+  /*min-height:600px;*/
+  padding:0px;
+  background: #FFF;
+}
+
+app-title-bar {
+ height:64px !important;
+}
+
+:host ::ng-deep .ant-layout-footer {
+  text-align: center;
+  font-size:10px;
+  padding:10px !important;
+}
+
+.layout {
+  min-height:600px;
+  min-width:1000px;
+  overflow: auto;
+  padding-bottom:35px;
+  background-color: #FFF !important;
+}
