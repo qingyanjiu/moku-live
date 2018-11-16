@@ -11,7 +11,7 @@
 对应的docker镜像：<a href="https://hub.docker.com/r/alaien/mokulive-server-callback/">alaien/mokulive-server-callback</a><br/></s>
 *callback项目已经归档废弃 callback api 已经集成到live-client项目中了<br/>
 3.<a href="https://github.com/qingyanjiu/live-client-springboot">live-client-springboot</a>(基于spring-boot的直播客户端，master支持rtmp直播，http-flv支持http-flv直播)<br/>
-http-flv-apollo是对应的apollo配置中心，启动时需要配置以下参数：APOLLO_META=http://106.75.249.249:8080   ENV=dev<br/>
+http-flv-apollo是对应的apollo配置中心，启动时需要配置以下参数：apollo.meta=http://106.75.249.249:8080 env=dev<br/>
 对应的docker镜像：<a href="https://hub.docker.com/r/alaien/live-client-springboot/">alaien/live-client-springboot</a><br/>
 4.<a href="https://github.com/qingyanjiu/live-config">live-config</a>(基于spring-cloud的config服务器，用于统一配置所有spring服务需要的配置文件)<br/>
 对应的docker镜像：<a href="https://hub.docker.com/r/alaien/live-config/">alaien/live-config</a><br/>
