@@ -1,6 +1,6 @@
 # builder
 FROM maven:3.5.2-jdk-8
-COPY ./client-frontend /client
+COPY . /client
 WORKDIR /client
 RUN mvn package -Dmaven.test.skip=true
 
