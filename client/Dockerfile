@@ -4,4 +4,4 @@ WORKDIR /client
 RUN mvn package -Dmaven.test.skip=true
 RUN ls target
 EXPOSE 8000
-CMD java -jar -Dcustom.server.url=$CONFIG_SERVER_URL target/*.jar
+CMD java -jar -Dapollo.meta=$APOLLO_URL -Denv=$ENV target/*.jar
