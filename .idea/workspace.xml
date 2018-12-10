@@ -2,44 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="229863c7-30a4-4380-b855-1ad9fb93adcf" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_googlecode_javaewah_JavaEWAH_0_7_9.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_jcraft_jsch_0_1_54.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcpkix_jdk15on_1_55.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcprov_jdk15on_1_55.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jgit_org_eclipse_jgit_3_6_1_201501031845_r.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_config_server_1_3_3_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_rsa_1_0_3_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client-frontend/target/classes/application.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client-frontend/target/classes/static/3rdpartylicenses.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client-frontend/target/classes/static/assets/img/logo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client-frontend/target/classes/static/favicon.ico" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client-frontend/target/classes/static/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client-frontend/target/classes/static/inline.318b50c57b4eba3d437b.bundle.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client-frontend/target/maven-archiver/pom.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client-frontend/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client-frontend/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client-frontend/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client-frontend/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config-server/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config-server/Dockerfile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config-server/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config-server/live-server-config-dev.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config-server/mvnw" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config-server/mvnw.cmd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config-server/pom.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config-server/src/main/java/louis/live/config/liveconfigspringboot/LiveConfigSpringbootApplication.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config-server/src/main/resources/application.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config-server/src/test/java/louis/live/config/liveconfigspringboot/LiveConfigSpringbootApplicationTests.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Dockerfile-client" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Dockerfile-client-backend" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Dockerfile-client-frontend" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Dockerfile-live-server-nginx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Dockerfile-live-server-nginx-edge" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-backend/Dockerfile" afterPath="$PROJECT_DIR$/client-backend/Dockerfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-frontend/Dockerfile" afterPath="$PROJECT_DIR$/client-frontend/Dockerfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/Dockerfile" afterPath="$PROJECT_DIR$/client/Dockerfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/live-server-nginx-edge/Dockerfile" afterPath="$PROJECT_DIR$/live-server-nginx-edge/Dockerfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/live-server-nginx/Dockerfile" afterPath="$PROJECT_DIR$/live-server-nginx/Dockerfile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/pom.xml" afterPath="$PROJECT_DIR$/client/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/client-backend/target/" />
@@ -55,21 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Dockerfile" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/live-server-nginx/Dockerfile">
+      <file leaf-file-name="Dockerfile-client" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Dockerfile-client">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="670">
-              <caret line="63" column="25" lean-forward="false" selection-start-line="63" selection-start-column="25" selection-end-line="63" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Dockerfile" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/live-server-nginx-edge/Dockerfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="63" column="30" lean-forward="false" selection-start-line="63" selection-start-column="30" selection-end-line="63" selection-end-column="30" />
+            <state relative-caret-position="54">
+              <caret line="3" column="6" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -81,6 +41,8 @@
     <findStrings>
       <find>org.apache.maven.plugins</find>
       <find>dependencyManagement</find>
+      <find>test</find>
+      <find>&lt;relativePath&gt;</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -97,19 +59,24 @@
         <option value="$PROJECT_DIR$/live-client-backend/pom.xml" />
         <option value="$PROJECT_DIR$/live-client-springboot/pom.xml" />
         <option value="$PROJECT_DIR$/live-client-frontend/pom.xml" />
-        <option value="$PROJECT_DIR$/client/pom.xml" />
-        <option value="$PROJECT_DIR$/client-backend/pom.xml" />
-        <option value="$PROJECT_DIR$/client-frontend/pom.xml" />
         <option value="$PROJECT_DIR$/client/src/main/java/louis/live/client/netty/ChannelManager.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/config-server/pom.xml" />
         <option value="$PROJECT_DIR$/live-config/pom.xml" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/client/Dockerfile" />
+        <option value="$PROJECT_DIR$/live-server-nginx-edge/Dockerfile" />
+        <option value="$PROJECT_DIR$/live-server-nginx/Dockerfile" />
         <option value="$PROJECT_DIR$/client-backend/Dockerfile" />
         <option value="$PROJECT_DIR$/client-frontend/Dockerfile" />
-        <option value="$PROJECT_DIR$/live-server-nginx/Dockerfile" />
-        <option value="$PROJECT_DIR$/live-server-nginx-edge/Dockerfile" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/client-frontend/pom.xml" />
+        <option value="$PROJECT_DIR$/client-backend/pom.xml" />
+        <option value="$PROJECT_DIR$/client/pom.xml" />
+        <option value="$PROJECT_DIR$/Dockerfile-client-frontend" />
+        <option value="$PROJECT_DIR$/Dockerfile-client-backend" />
+        <option value="$PROJECT_DIR$/Dockerfile-live-server-nginx" />
+        <option value="$PROJECT_DIR$/Dockerfile-live-server-nginx-edge" />
+        <option value="$PROJECT_DIR$/Dockerfile-client" />
+        <option value="$PROJECT_DIR$/client/Dockerfile" />
       </list>
     </option>
   </component>
@@ -128,7 +95,17 @@
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
-      <expand />
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="client" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="client" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+      </expand>
       <select />
     </treeState>
   </component>
@@ -164,11 +141,6 @@
               <item name="moku-live" type="b2602c69:ProjectViewProjectNode" />
               <item name="moku-live" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="moku-live" type="b2602c69:ProjectViewProjectNode" />
-              <item name="moku-live" type="462c0819:PsiDirectoryNode" />
-              <item name="live-server-nginx-edge" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -195,14 +167,16 @@
     <property name="GO_FMT" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\louisliu\Desktop\poc\moku-live" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\louisliu\Desktop\poc\moku-live" />
       <recent name="C:\Users\louisliu\Desktop\poc\moku-live\config-server" />
       <recent name="C:\Users\louisliu\Desktop\poc\moku-live\client-backend" />
       <recent name="C:\Users\louisliu\Desktop\poc\moku-live\client-frontend" />
       <recent name="C:\Users\louisliu\Desktop\poc\moku-live\client" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\louisliu\Desktop\poc\moku-live" />
+      <recent name="C:\Users\louisliu\Desktop\poc\moku-live\live-server-nginx" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -217,7 +191,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.config-server">
+  <component name="RunManager" selected="Spring Boot.backend">
     <configuration name="FrontendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="stream.mokulive.frontend.FrontendApplication" />
@@ -313,13 +287,6 @@
       <module name="client-backend" />
       <envs />
     </configuration>
-    <configuration name="config-server" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="louis.live.config.liveconfigspringboot.LiveConfigSpringbootApplication" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <module name="config-server" />
-      <envs />
-    </configuration>
     <configuration name="live-client-springboot" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="louis.live.client.LiveclientApplication" />
@@ -327,11 +294,10 @@
       <module name="client" />
       <envs />
     </configuration>
-    <list size="4">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Spring Boot.backend" />
       <item index="1" class="java.lang.String" itemvalue="Spring Boot.live-client-springboot" />
       <item index="2" class="java.lang.String" itemvalue="Spring Boot.FrontendApplication" />
-      <item index="3" class="java.lang.String" itemvalue="Spring Boot.config-server" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -346,7 +312,7 @@
       <updated>1540888669622</updated>
       <workItem from="1540888673824" duration="2566000" />
       <workItem from="1544422326561" duration="852000" />
-      <workItem from="1544423264426" duration="169000" />
+      <workItem from="1544423264426" duration="2358000" />
     </task>
     <task id="LOCAL-00001" summary="change live server code">
       <created>1544422630658</created>
@@ -355,11 +321,25 @@
       <option name="project" value="LOCAL" />
       <updated>1544422630658</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="changed Dockerfiles and made this project to be with apollo config server">
+      <created>1544423466552</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1544423466552</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Dockerfile update">
+      <created>1544424148571</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1544424148571</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3587000" />
+    <option name="totallyTimeSpent" value="5776000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-5" y="3" width="1917" height="1027" extended-state="0" />
@@ -407,7 +387,9 @@
       <path value="$PROJECT_DIR$/live-server-nginx" />
     </ignored-roots>
     <MESSAGE value="change live server code" />
-    <option name="LAST_COMMIT_MESSAGE" value="change live server code" />
+    <MESSAGE value="changed Dockerfiles and made this project to be with apollo config server" />
+    <MESSAGE value="Dockerfile update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dockerfile update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -433,14 +415,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client-backend/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="129" column="27" lean-forward="false" selection-start-line="110" selection-start-column="4" selection-end-line="129" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -471,21 +445,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client-frontend/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="108" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="128" column="25" lean-forward="true" selection-start-line="121" selection-start-column="12" selection-end-line="128" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -531,26 +490,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="23" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/Dockerfile">
+    <entry file="file://$PROJECT_DIR$/live-server-nginx-edge/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
-          <caret line="1" column="13" lean-forward="false" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+          <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client-frontend/Dockerfile">
+    <entry file="file://$PROJECT_DIR$/live-server-nginx/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+        <state relative-caret-position="18">
+          <caret line="2" column="4" lean-forward="false" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -558,23 +509,95 @@
     <entry file="file://$PROJECT_DIR$/client-backend/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
-          <caret line="2" column="21" lean-forward="false" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+          <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/live-server-nginx/Dockerfile">
+    <entry file="file://$PROJECT_DIR$/client-frontend/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="670">
-          <caret line="63" column="25" lean-forward="false" selection-start-line="63" selection-start-column="25" selection-end-line="63" selection-end-column="25" />
+        <state relative-caret-position="180">
+          <caret line="10" column="11" lean-forward="true" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/live-server-nginx-edge/Dockerfile">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="63" column="30" lean-forward="false" selection-start-line="63" selection-start-column="30" selection-end-line="63" selection-end-column="30" />
+        <state relative-caret-position="25">
+          <caret line="11" column="26" lean-forward="true" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-frontend/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="41" lean-forward="false" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-backend/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="41" lean-forward="false" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="41" lean-forward="false" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dockerfile-client-frontend">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="33" lean-forward="false" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dockerfile-client-backend">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="17" lean-forward="false" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dockerfile-live-server-nginx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="63" column="23" lean-forward="false" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dockerfile-live-server-nginx-edge">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1134">
+          <caret line="63" column="28" lean-forward="false" selection-start-line="63" selection-start-column="28" selection-end-line="63" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="6" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dockerfile-client">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="6" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
           <folding />
         </state>
       </provider>
