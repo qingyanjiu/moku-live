@@ -113,19 +113,20 @@
                 <scope>import</scope>
             </dependency>
 
-            <dependency>
-                <!-- Import dependency management from Spring Boot -->
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>1.5.8.RELEASE</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
+            <!--<dependency>-->
+                <!--&lt;!&ndash; Import dependency management from Spring Boot &ndash;&gt;-->
+                <!--<groupId>org.springframework.boot</groupId>-->
+                <!--<artifactId>spring-boot-dependencies</artifactId>-->
+                <!--<version>1.5.8.RELEASE</version>-->
+                <!--<type>pom</type>-->
+                <!--<scope>import</scope>-->
+            <!--</dependency>-->
         </dependencies>
 
     </dependencyManagement>
 
     <build>
+        <sourceDirectory>src/main/</sourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
