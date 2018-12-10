@@ -1,5 +1,5 @@
 FROM maven:3.5.2-jdk-8-alpine
-COPY . /client
+COPY ./client /client
 WORKDIR /client
 RUN mvn package -Dmaven.test.skip=true
 RUN ls target

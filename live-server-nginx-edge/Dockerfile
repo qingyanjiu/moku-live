@@ -1,6 +1,6 @@
 FROM alpine
 
-ADD Shanghai /etc/localtime
+ADD ./live-server-nginx-edge/Shanghai /etc/localtime
 
 #ADD repositories /etc/apk/repositories
 #RUN apk add --no-cache alpine-sdk
@@ -12,13 +12,13 @@ RUN apk add --no-cache curl git unzip xz g++ gcc make irssi tar zsh wget
 
 #ADD ttyjs-config.json /
 
-ADD start.sh /web/
+ADD ./live-server-nginx-edge/start.sh /web/
 
 # Install oh-my-zsh
 RUN git clone --depth=1 git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh \
         && cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 
-ADD zshrc /root/.zshrc
+ADD ./live-server-nginx-edge/zshrc /root/.zshrc
 
 ENV SHELL /bin/zsh
 
@@ -28,7 +28,7 @@ RUN wget http://h264.code-shop.com/download/nginx_mod_h264_streaming-2.2.7.tar.g
 
 RUN tar -xzvf  nginx_mod_h264_streaming-2.2.7.tar.gz
 
-COPY ngx_http_streaming_module.c /nginx_mod_h264_streaming-2.2.7/src/
+COPY ./live-server-nginx-edge/ngx_http_streaming_module.c /nginx_mod_h264_streaming-2.2.7/src/
 
 RUN wget https://github.com/FRiCKLE/ngx_cache_purge/archive/master.zip
 
@@ -59,9 +59,9 @@ RUN make
 
 RUN make install
 
-COPY nginx.conf /nginx-1.13.6/conf/nginx.conf
+COPY ./live-server-nginx-edge/nginx.conf /nginx-1.13.6/conf/nginx.conf
 
-COPY nclients.xsl /usr/local/nginx/html/
+COPY ./live-server-nginx-edge/nclients.xsl /usr/local/nginx/html/
 
 RUN chmod 777 /usr/local/nginx/html
 
