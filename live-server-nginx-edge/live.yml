@@ -5,15 +5,15 @@ services:
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock"
     ports:
-      - "8080:8080"
+      - "30001:8080"
     deploy:
       placement:
         constraints:
           - node.role == manager
-  live:
-    image: alaien/live-server-nginx-edge:http-flv
+  live_edge:
+    image: alaien/live.moku.live-server-nginx-edge
     ports:
-      - 8880:80
+      - 8099:80
     deploy:
       mode: global
       placement:
@@ -22,10 +22,10 @@ services:
       restart_policy:
         condition: on-failure
     environment:
-      - PULL_URL=155.94.71.151
+      - PULL_URL=config.mokulive.stream
 
   client:
-    image: alaien/live-client-springboot:http-flv 
+    image: alaien/live.moku.client
     ports:
       - 80:8000
     deploy:
@@ -39,18 +39,11 @@ services:
       restart_policy:
         condition: on-failure
     environment:
-      - CONFIG_SERVER_URL=http://live-config.herokuapp.com/
+      - APOLLO_URL=http://config.mokulive.stream:8080
+      - ENV=dev
     networks:
       - client    
 
-  mq:
-    image: rabbitmq
-    deploy:
-      placement:
-        constraints:
-          - node.role == manager
-    networks:
-      - client
        
 networks:
   client:
