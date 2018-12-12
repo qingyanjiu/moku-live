@@ -121,12 +121,25 @@
             style="height:inherit;margin:30px;">
 
             <li class="lg-3 md-4 sm-12" th:each="live,liveStat : ${lives}">
-                <div style="background:#DDDDDD;text-align:center;cursor:pointer;margin-top:10px;margin-bottom:10px"
+                <div style="height: 260px;background:#DDDDDD;text-align:center;cursor:pointer;margin-top:10px;margin-bottom:10px"
                      th:onclick="'javascript:toLive(\''+${live.userName}+'\',\''+${live.liveName}+'\')'">
-                    <div th:if="${live.password != null and live.password != ''}" style="position:relative;float:left;background:red;color:white;padding:10px"><i class="icon-lock icon-white"></i></div>
-                    <div th:if="${live.status == '9'}" style="position:relative;float:right;background:orange;color:white;padding:10px">正在直播</div>
-                    <div th:style="|height: 180px;background-image:url(${snapshotUrl}${live.streamCode}.png);background-size:contain|">
+                    <div th:if="${live.status == '9'}" style="position:relative;background:orange;color:white;padding:10px">
+                        正在直播
+                        <i th:if="${live.password != null and live.password != ''}"
+                           class="icon-lock icon-white pull-right">
+                        </i>
                     </div>
+
+                    <div th:if="${live.status != '9'}" style="position:relative;background:#888;color:white;padding:10px">
+                        未开播
+                        <i th:if="${live.password != null and live.password != ''}"
+                           class="icon-lock icon-white pull-right">
+                        </i>
+                    </div>
+
+                    <img style="width: 320px; height: 180px;" th:src="|${snapshotUrl}${live.streamCode}.png|"
+                         onerror="javascript:this.src='/assets/img/player-back-empty.png';">
+                    </img>
                     <p style="padding:10px;font-size:16px" th:text="|主播:${live.userName}    ${live.liveName}|">
                     </p>
                 </div>
