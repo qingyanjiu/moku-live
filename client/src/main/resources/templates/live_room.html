@@ -51,28 +51,22 @@
             height: auto !important;
             height: 100%;
             /* Negative indent footer by it's height */
-            margin: 0 auto -60px;
+            margin: 0;
         }
 
         /* Set the fixed height of the footer here */
         #push,
         #footer {
-            height: 60px;
+            position:absolute;
+            bottom:0;
+            width:100%;
+            padding-left:2rem;
         }
 
         #footer {
             background-color: rgba(235, 235, 235, 0.6);
         }
 
-        /* Lastly, apply responsive CSS fixes as necessary */
-        @media (max-width: 767px) {
-            #footer {
-                margin-left: -20px;
-                margin-right: -20px;
-                padding-left: 20px;
-                padding-right: 20px;
-            }
-        }
 
         /* Custom page CSS
         -------------------------------------------------- */
@@ -136,14 +130,14 @@
     <script type="text/javascript" src="/assets/js/flvHelper.js"></script>
 </head>
 
-<body style="overflow: hidden">
+<body style="overflow:hidden;padding:0">
 
 
 <!-- Part 1: Wrap all page content here -->
-<div id="wrap" style="background-image:url('/assets/img/back.jpg');background-size:'contain';">
+<div id="wrap" style="background-image:url('/assets/img/back.jpg');background-size:'contain';overflow-y:auto;position: fixed;left: 0;right: 0;">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="navbar-inner">
-            <div class="container">
+            <div class="container" style="padding-left: 2rem;padding-right: 2rem;">
                 <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
