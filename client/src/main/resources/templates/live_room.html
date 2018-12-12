@@ -48,7 +48,6 @@
         /* Wrapper for page content to push down footer */
         #wrap {
             min-height: 100%;
-            height: auto !important;
             height: 100%;
             /* Negative indent footer by it's height */
             margin: 0;
@@ -57,10 +56,11 @@
         /* Set the fixed height of the footer here */
         #push,
         #footer {
-            position:absolute;
+            position:fixed;
             bottom:0;
             width:100%;
             padding-left:2rem;
+            height:40px;
         }
 
         #footer {
@@ -73,7 +73,7 @@
         /* Not required for template or sticky footer method. */
 
         .container {
-            width: auto;
+            width: 100%;
             max-width: 680px;
         }
 
@@ -124,8 +124,8 @@
     <link rel="shortcut icon" href="/assets/ico/favicon.png"/>
     <script src="/assets/js/jquery.js"></script>
 
-    <link rel="stylesheet" href="https://g.alicdn.com/de/prismplayer/2.7.4/skins/default/index-min.css" />
-    <script type="text/javascript" src="https://g.alicdn.com/de/prismplayer/2.7.4/prism-min.js"></script>
+
+
     <script type="text/javascript" src="/assets/js/flv.min.js"></script>
     <script type="text/javascript" src="/assets/js/flvHelper.js"></script>
 </head>
@@ -134,7 +134,7 @@
 
 
 <!-- Part 1: Wrap all page content here -->
-<div id="wrap" style="background-image:url('/assets/img/back.jpg');background-size:'contain';overflow-y:auto;position: fixed;left: 0;right: 0;">
+<div id="wrap" style="background-image:url('/assets/img/back.jpg');background-size:'contain';overflow-y:auto;overflow-x:hidden;position: fixed;left: 0;right: 0;">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="navbar-inner">
             <div class="container" style="padding-left: 2rem;padding-right: 2rem;">
@@ -288,7 +288,7 @@
     </div>
 
     <div class="container" id="login" style="display:none">
-        <form class="form-signin">
+        <form id="loginForm" action="/login" method="POST" class="form-signin">
             <h3 class="form-signin-heading">&nbsp;&nbsp;用户登录</h3>
             <input name="userName" id="userName" type="text" class="input-block-level" placeholder="邮箱/账号/手机号"/>
             <input name="password" id="password" type="password" class="input-block-level" placeholder="密码"/>
@@ -302,8 +302,8 @@
 
 <div id="footer">
     <div class="container">
-        <p class="muted credit" style="color:#000000">PRIVATE直播&nbsp;&nbsp;&nbsp;&nbsp; <a
-                    href="#" style="color:#333333">Louis.L</a></p>
+        <p class="muted credit" style="color:#000000;margin-top:12px">PRIVATE直播&nbsp;&nbsp;&nbsp;&nbsp; <a
+                    href="#" style="color:#333333">M.M</a></p>
     </div>
 </div>
 

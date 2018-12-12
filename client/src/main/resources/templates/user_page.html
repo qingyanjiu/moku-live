@@ -10,6 +10,30 @@
     <!-- CSS -->
     <link href="/assets/css/bootstrap.css" rel="stylesheet"/>
     <style type="text/css">
+        .dm {
+            width: 100%;
+            height: 100%;
+            border: 1px solid #000
+        }
+
+        .dm .d_screen .d_mask {
+            width: 100%;
+            height: 500px;
+            background: #000;
+            opacity: 0;
+            /*filter: alpha(opacity=50);*/
+            z-index: 1;
+        }
+
+        .dm .d_screen .d_show div {
+            font-size: 22px;
+            line-height: 36px;
+            font-weight: 500;
+            color: #fff;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
 
         /* Sticky footer styles
         -------------------------------------------------- */
@@ -24,39 +48,33 @@
         /* Wrapper for page content to push down footer */
         #wrap {
             min-height: 100%;
-            height: auto !important;
             height: 100%;
             /* Negative indent footer by it's height */
-            margin: 0 auto -60px;
+            margin: 0;
         }
 
         /* Set the fixed height of the footer here */
         #push,
         #footer {
-            height: 60px;
+            position:fixed;
+            bottom:0;
+            width:100%;
+            padding-left:2rem;
+            height:40px;
         }
 
         #footer {
             background-color: rgba(235, 235, 235, 0.6);
         }
 
-        /* Lastly, apply responsive CSS fixes as necessary */
-        @media (max-width: 767px) {
-            #footer {
-                margin-left: -20px;
-                margin-right: -20px;
-                padding-left: 20px;
-                padding-right: 20px;
-            }
-        }
 
         /* Custom page CSS
         -------------------------------------------------- */
         /* Not required for template or sticky footer method. */
 
         .container {
-            width: auto;
-            max-width: 90%;
+            width: 100%;
+            max-width: 680px;
         }
 
         .container .credit {
@@ -108,14 +126,14 @@
     <link rel="shortcut icon" href="/assets/ico/favicon.png"/>
 
 
-    <link rel="stylesheet" href="https://g.alicdn.com/de/prismplayer/2.7.4/skins/default/index-min.css" />
-    <script type="text/javascript" src="https://g.alicdn.com/de/prismplayer/2.7.4/prism-min.js"></script>
+
+
 
     <script type="text/javascript" src="/assets/js/flv.min.js"></script>
     <script type="text/javascript" src="/assets/js/flvHelper.js"></script>
 </head>
 
-<body style="overflow: hidden">
+<body style="overflow: hidden;padding:0">
 
 <!--<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">-->
 <!--<div class="modal-header">-->
@@ -168,10 +186,10 @@
 
 
 <!-- Part 1: Wrap all page content here -->
-<div id="wrap" style="background-image:url('/assets/img/back.jpg');background-size:'contain';">
+<div id="wrap" style="background-image:url('/assets/img/back.jpg');background-size:'contain';overflow-y:auto;overflow-x:hidden;position: fixed;left: 0;right: 0;">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="navbar-inner">
-            <div class="container">
+            <div class="container" style="padding-left: 2rem;padding-right: 2rem;">
                 <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -232,26 +250,30 @@
 
             </span>
         </div>
-        <div style="position: absolute;left: 50%;height:800px">
-                <div>
-<!--             <div style="width:1000px;height:560px;line-height: 25px;margin: 0 5px;float: left;position: relative;right: 50%;padding-top:20px"> -->
+
+        <video id="iosLive" style="width:100%;height:auto;display:none;margin-top:20%" controls="controls" autoplay="autoplay"></video>
+        <video id="androidLive" style="width:100%;height:auto;display:none;margin-top:20%" controls="controls" autoplay="autoplay"></video>
+        <div id="videoMain" style="position: absolute;left: 50%;height:800px">
+            <div style="width:1000px;height:560px;line-height: 25px;margin: 0 5px;float: left;position: relative;right: 50%;padding-top:60px">
 
                 <!--<div class="prism-player" id="J_prismPlayer"></div>-->
                 <!--<script th:inline="javascript">-->
-                    <!--var streamUrl = [[${streamUrl}]];-->
-                    <!--var streamCode = [[${live.streamCode}]];-->
-                    <!--var player = new prismplayer({-->
-                        <!--id: "J_prismPlayer", // 容器id-->
-                        <!--source: streamUrl+streamCode,  // 视频url 支持互联网可直接访问的视频地址-->
-                        <!--autoplay: true,      // 自动播放-->
-                        <!--width: "100%",       // 播放器宽度-->
-                        <!--height: "500px",     // 播放器高度-->
-                        <!--isLive:true,-->
-                        <!--showBarTime:"500"-->
-                    <!--});-->
+                <!--var streamUrl = [[${streamUrl}]];-->
+                <!--var streamCode = [[${live.streamCode}]];-->
+                <!--var player = new prismplayer({-->
+                <!--id: "J_prismPlayer", // 容器id-->
+                <!--source: streamUrl+streamCode,  // 视频url 支持互联网可直接访问的视频地址-->
+                <!--autoplay: true,      // 自动播放-->
+                <!--width: "100%",       // 播放器宽度-->
+                <!--height: "500px",      // 播放器高度-->
+                <!--isLive:true,-->
+                <!--showBarTime:"500"-->
+                <!--});-->
                 <!--</script>-->
 
-                <video controls="controls" autoplay="autoplay" id="videoElement" style="width:1000px;height:560px;line-height: 25px;margin: 0 5px;float: left;position: relative;right: 50%;padding-top:20px"></video>
+                <video id="videoElement" style="width:1000px;height:560px;" controls="controls" autoplay="autoplay">
+                    Your browser is too old which doesn't support HTML5 video.
+                </video>
                 <script th:inline="javascript">
                     /*<![CDATA[*/
                     var u = navigator.userAgent, app = navigator.appVersion;
@@ -259,8 +281,18 @@
                     var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
 
                     if (isIOS) {
-                        var videoElement = document.getElementById('videoElement');
-                        videoElement.src = [[${hlsUrl}]]+[[${live.streamCode}]]+'.m3u8';
+                        $("#videoMain").hide();
+                        $("#iosLive").show();
+                        var iosLive = document.getElementById('iosLive');
+                        iosLive.src = [[${hlsUrl}]]+[[${live.streamCode}]]+'.m3u8';
+                    }
+                    else if(isAndroid) {
+                        if (flvjs.isSupported()) {
+                            $("#videoMain").hide();
+                            $("#androidLive").show();
+                            var androidLive = document.getElementById('androidLive');
+                            flv_load(androidLive, [[${httpflvUrl}]]+[[${live.streamCode}]]);
+                        }
                     }
                     else{
                         if (flvjs.isSupported()) {
@@ -268,8 +300,33 @@
                             flv_load(videoElement, [[${httpflvUrl}]]+[[${live.streamCode}]]);
                         }
                     }
-                /*]]>*/
+                    /*]]>*/
                 </script>
+
+                <div th:if="${live.liveName != null and live.userName != null}" style="background-color: rgba(255,255,255,0.2);height:50px">
+                    <p style="font-size:16px;color:#FFFFFF;text-align:center;padding:10px"
+                       th:text="|${live.liveName}&nbsp;&nbsp;&nbsp;&nbsp;用户:${live.userName}|">
+                        <span style="margin-left:40px" id="infobar"></span>
+                    </p>
+                </div>
+
+                <br/>
+                <div class="send" style="text-align:center">
+                    <input placeholder="说点什么?" class="s_txt" type="text" style="width:388px;
+                              height: 34px;
+                              border-radius: 3px;
+                              border: 1px solid rgb(204, 204, 204);
+                              padding-left: 10px;"/>
+                    <input type="button" value="发送弹幕" class="s_sub" style="border: 1px solid rgb(210, 80, 30);color:rgb(230, 80, 30);
+                              border-radius: 3px;
+                              text-align: center;
+                              height: 45px;
+                              margin-left:10px;
+                              margin-bottom:10px;
+                              line-height: 35px;
+                              font-weight:bold;
+                              font-size: 14px;width:159px;background-color:white"/>
+                </div>
             </div>
         </div>
     </div>
