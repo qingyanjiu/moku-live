@@ -34,7 +34,7 @@ RUN wget https://github.com/FRiCKLE/ngx_cache_purge/archive/master.zip
 
 RUN unzip master.zip
 
-RUN wget https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-64bit-static.tar.xz -O ffmpeg.tar.xz
+RUN wget http://www.ffmpeg.org/releases/ffmpeg-3.4.5.tar.xz -O ffmpeg.tar.xz
 
 RUN xz -d ffmpeg.tar.xz
 
