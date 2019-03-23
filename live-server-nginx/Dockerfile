@@ -4,7 +4,7 @@ ADD Shanghai /etc/localtime
 
 #ADD repositories /etc/apk/repositories
 #RUN apk add --no-cache alpine-sdk
-RUN apk add --no-cache pcre pcre-dev openssl openssl-dev ruby zlib-dev libxslt-dev libxml2-dev
+RUN apk add --no-cache pcre pcre-dev openssl openssl-dev ruby zlib-dev libxslt-dev libxml2-dev yasm
 
 RUN apk add --no-cache curl git unzip xz g++ gcc make irssi tar zsh wget
 
@@ -41,6 +41,12 @@ RUN xz -d ffmpeg.tar.xz
 RUN mkdir ffmpeg
 
 RUN tar xvf ffmpeg.tar -C ffmpeg --strip-components 1
+
+WORKDIR /ffmpeg
+
+RUN ./configure
+
+RUN make && make install
 
 RUN git clone git://github.com/arut/nginx-rtmp-module.git
 
