@@ -42,7 +42,7 @@ RUN mkdir ffmpeg
 
 RUN tar xvf ffmpeg.tar -C ffmpeg --strip-components 1
 
-WORKDIR /ffmpeg
+RUN cd /ffmpeg
 
 RUN ./configure
 
