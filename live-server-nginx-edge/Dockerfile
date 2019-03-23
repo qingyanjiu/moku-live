@@ -42,11 +42,13 @@ RUN mkdir ffmpeg
 
 RUN tar xvf ffmpeg.tar -C ffmpeg --strip-components 1
 
-RUN cd /ffmpeg
+WORKDIR /ffmpeg
 
 RUN ./configure
 
 RUN make && make install
+
+WORKDIR /
 
 RUN git clone https://github.com/winshining/nginx-http-flv-module.git
 
