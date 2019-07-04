@@ -1,4 +1,4 @@
-package priv.louis.live;
+package priv.moku.live;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -21,5 +21,6 @@
 		<module>client-backend</module>
 		<module>client-frontend</module>
         <module>client</module>
+        <module>config-server</module>
   	</modules>
 </project>

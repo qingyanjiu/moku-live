@@ -9,15 +9,15 @@
         <module name="client" />
         <module name="client-backend" />
         <module name="client-frontend" />
+        <module name="config-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="client" target="1.8" />
-      <module name="client (1)" target="1.5" />
       <module name="client-backend" target="1.8" />
       <module name="client-frontend" target="1.8" />
       <module name="config-server" target="1.8" />
-      <module name="moku-live" target="1.8" />
+      <module name="moku-live" target="1.6" />
     </bytecodeTargetLevel>
   </component>
 </project>
