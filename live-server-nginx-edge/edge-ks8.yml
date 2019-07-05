@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: edge
+  labels:
+    app: server-edge
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: server-edge
+  template:
+    metadata:
+      name: edge
+      labels:
+        app: server-edge
+    spec:
+      restartPolicy: Always
+      containers:
+      - name: nginx-server
+        image: alaien/live.moku.live-server-nginx-edge
+        imagePullPolicy: Always
+        env:
+        - name: PULL_URL
+          value: "http://106.75.119.242"
+        ports:
+        - name: html
+          containerPort: 80
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: edge
+  labels:
+    app: server-edge
+spec:
+  selector:
+    app: server-edge
+  type: NodePort
+  ports:
+  - name: html
+    port: 80
+    targetPort: 80
+    nodePort: 30066
