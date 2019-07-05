@@ -22,7 +22,7 @@ spec:
         imagePullPolicy: Always
         env:
         - name: PULL_URL
-          value: "http://106.75.119.242"
+          value: "106.75.119.242"
         ports:
         - name: html
           containerPort: 80
