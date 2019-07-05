@@ -3,7 +3,7 @@ COPY . /mokulive
 WORKDIR /mokulive/client
 RUN mvn package -Dmaven.test.skip=true
 
-FROM openjdk:8
+FROM openjdk:8-alpine
 COPY --from=0 /mokulive/client/target/*.jar . 
 EXPOSE 8000
 CMD java -jar \
