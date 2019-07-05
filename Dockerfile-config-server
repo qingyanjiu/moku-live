@@ -1,0 +1,9 @@
+FROM maven:3.5.2-jdk-8-alpine
+COPY . /mokulive
+WORKDIR /mokulive/config-server
+RUN mvn package -Dmaven.test.skip=true
+
+FROM openjdk:8
+COPY --from=0 /mokulive/config-server/target/*.jar .
+EXPOSE 3000
+CMD java -jar *.jar
