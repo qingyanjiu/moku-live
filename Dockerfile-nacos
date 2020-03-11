@@ -1,0 +1,5 @@
+FROM openjdk:8-alpine
+COPY ./nacos /nacos
+WORKDIR /nacos/bin
+CMD sh -c startup.sh
+
