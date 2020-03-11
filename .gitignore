@@ -27,3 +27,5 @@ logs/
 data/
 *.log
 *.dat
+
+!/nacos/target
