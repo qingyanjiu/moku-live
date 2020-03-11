@@ -122,7 +122,9 @@
 
             <li class="lg-3 md-4 sm-12" th:each="live,liveStat : ${lives}">
                 <div style="height: 260px;background:#DDDDDD;text-align:center;cursor:pointer;margin-top:10px;margin-bottom:10px"
-                     th:onclick="'javascript:toLive(\''+${live.userName}+'\',\''+${live.liveName}+'\')'">
+                     th:data-username="${live.userName}"
+                     th:data-livename="${live.liveName}"
+                     onclick="toLive(this.getAttribute('username'),this.getAttribute('livename'))">
                     <div th:if="${live.status == '9'}" style="position:relative;background:orange;color:white;padding:10px">
                         正在直播
                         <i th:if="${live.password != null and live.password != ''}"

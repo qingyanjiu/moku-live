@@ -125,10 +125,6 @@
     <link rel="apple-touch-icon-precomposed" href="/assets/ico/apple-touch-icon-57-precomposed.png"/>
     <link rel="shortcut icon" href="/assets/ico/favicon.png"/>
 
-
-
-
-
     <script type="text/javascript" src="/assets/js/flv.min.js"></script>
     <script type="text/javascript" src="/assets/js/flvHelper.js"></script>
 </head>
@@ -228,15 +224,16 @@
                    style="margin-left:20px;font-size:16px;color:#228b22" onclick="changeRoomName()">改房间名
                 </a>
 
-                <a id="encodeButton"  href="#"
-                style="margin-left:20px;font-size:16px;color:#696969" onclick="encodeRoom()">房间加密
+                <a id="encodeButton"  href="#" style="margin-left:20px;font-size:16px;color:#696969" onclick="encodeRoom()">
+                    房间加密
                 </a>
 
-                <a id="startLiveButton" href="#"
-                   style="margin-left:20px;font-size:16px;color:#FF0000" th:onclick="'javascript:endLive(\''+${live.streamCode}+'\')'">关闭直播
+                <a id="stopLiveButton" href="#"
+                   style="margin-left:20px;font-size:16px;color:#FF0000" th:data-streamcode="${live.streamCode}"
+                   onclick="endLive(this.getParameter('streamcode'))">关闭直播
                 </a>
             </p>
-            <button id="startLiveButton" class="btn btn-large btn-block btn-primary" type="button"
+            <button id="shareLiveButton" class="btn btn-large btn-block btn-primary" type="button"
                     style="width:20%;margin-left:40%" onclick="toggleMenu('10')">分享直播间
             </button>
             </div>
