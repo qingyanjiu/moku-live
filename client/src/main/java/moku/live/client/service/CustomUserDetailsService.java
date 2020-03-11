@@ -38,7 +38,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 
             @Override
             public String getPassword() {
-                return user.getPassword();
+                return "{MD5}"+user.getPassword();
             }
 
             @Override

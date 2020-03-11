@@ -1,6 +1,8 @@
 package moku.live.client.service;
 
 import moku.live.client.mapper.CallbackMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,7 +11,7 @@ import java.util.Map;
 @Service
 public class CallbackService {
 
-    private static final org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(CallbackService.class);
+    private static final Logger logger = LoggerFactory.getLogger(CallbackService.class);
 
     @Autowired
     CallbackMapper callbackMapper;

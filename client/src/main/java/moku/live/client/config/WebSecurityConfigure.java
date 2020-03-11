@@ -6,7 +6,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
@@ -64,20 +63,7 @@ public class WebSecurityConfigure extends WebSecurityConfigurerAdapter implement
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(customUserDetailsService())
-//                .passwordEncoder(new PlaintextPasswordEncoder());
-                .passwordEncoder(passwordEncoder());
-    }
-
-    /**
-     * 设置用户密码的加密方式为MD5加密
-     *
-     * @return
-     */
-    @Bean
-    public Md5PasswordEncoder passwordEncoder() {
-        return new Md5PasswordEncoder();
-
+        auth.userDetailsService(customUserDetailsService());
     }
 
     /**

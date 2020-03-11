@@ -1,0 +1,36 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: config-server
+
+server:
+  port: 3000
+
+---
+
+spring:
+  profiles: dev
+  cloud:
+    config:
+      server:
+        git:
+          password: 585106
+          uri: https://e.coding.net/moku/config-server.git
+          username: qingyanjiu@hotmail.com
+
+
+---
+
+spring:
+  profiles: prod
+  cloud:
+    config:
+      server:
+        git:
+          password: 585106
+          uri: https://e.coding.net/moku/config-server.git
+          username: qingyanjiu@hotmail.com
+
+
+

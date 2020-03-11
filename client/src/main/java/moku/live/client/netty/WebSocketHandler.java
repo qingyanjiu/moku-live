@@ -13,8 +13,8 @@ import io.netty.handler.codec.http.websocketx.*;
 import io.netty.handler.timeout.IdleState;
 import io.netty.handler.timeout.IdleStateEvent;
 import io.netty.util.concurrent.GlobalEventExecutor;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
@@ -27,11 +27,11 @@ import java.time.LocalDateTime;
 //特别注意这个注解@Sharable，默认的4版本不能自动导入匹配的包，需要手动加入
 //地址是import io.netty.channel.ChannelHandler.Sharable;
 @Sharable
-public class WebSocketHandler extends SimpleChannelInboundHandler<TextWebSocketFrame>{
+public class WebSocketHandler extends SimpleChannelInboundHandler<TextWebSocketFrame> {
 
     private static final String WSURI = "/ws";
 
-    private static final Logger logger = LogManager.getLogger(WebSocketHandler.class);
+    private static final Logger logger = LoggerFactory.getLogger(WebSocketHandler.class);
 
     public static ChannelGroup channels = new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);
 
@@ -75,6 +75,7 @@ public class WebSocketHandler extends SimpleChannelInboundHandler<TextWebSocketF
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
 //      System.out.println(ctx.channel().localAddress().toString() + " 通道已激活！");
     }
+
     /*
      * channelInactive
      *
@@ -98,6 +99,7 @@ public class WebSocketHandler extends SimpleChannelInboundHandler<TextWebSocketF
             handleWebSocketFrame(ctx, (WebSocketFrame) msg);
         }
     }
+
     /*
      * 功能：读空闲时移除Channel
      */
@@ -155,18 +157,21 @@ public class WebSocketHandler extends SimpleChannelInboundHandler<TextWebSocketF
         if (frame instanceof TextWebSocketFrame) {
             // 返回应答消息
             String requestmsg = ((TextWebSocketFrame) frame).text();
-            System.out.println("websocket消息======"+requestmsg);
-            String[] array= requestmsg.split(",");
+            System.out.println("websocket消息======" + requestmsg);
+            String[] array = requestmsg.split(",");
             // 将通道加入通道管理器
-            ChannelManager.addChannel(ctx.channel(),array[0]);
+            ChannelManager.addChannel(ctx.channel(), array[0]);
             ChannelInfo ChannelInfo = ChannelManager.getChannelInfo(ctx.channel());
-            if (array.length== 3) {
+            if (array.length == 3) {
                 // 将信息返回给h5
-                String sendid=array[0];String friendid=array[1];String messageid=array[2];
-                ChannelManager.broadcastMess(friendid,messageid,sendid);
+                String sendid = array[0];
+                String friendid = array[1];
+                String messageid = array[2];
+                ChannelManager.broadcastMess(friendid, messageid, sendid);
             }
         }
     }
+
     /**
      * 功能：服务端发生异常的操作
      */

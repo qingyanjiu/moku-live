@@ -1,6 +1,8 @@
 package moku.live.client.controller;
 
 import moku.live.client.service.CallbackService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,7 +16,7 @@ import java.util.Map;
 @RequestMapping("/")
 public class CallbackController {
 
-    private static final org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(CallbackController.class);
+    private static final Logger logger = LoggerFactory.getLogger(CallbackController.class);
 
     @Autowired
     private CallbackService callbackService;

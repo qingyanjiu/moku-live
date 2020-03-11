@@ -1,6 +1,7 @@
 package moku.live.client.config.bean;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Component;
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Component;
 @RefreshScope
 public class DbConfig {
 
-    private static final Logger logger = Logger.getLogger(DbConfig.class);
+    private static final Logger logger = LoggerFactory.getLogger(DbConfig.class);
 
     private String driverClassName;
     private String url;
