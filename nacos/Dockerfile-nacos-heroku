@@ -1,0 +1,11 @@
+FROM openjdk:8-alpine
+COPY ./nacos /nacos
+WORKDIR /nacos/target
+CMD java \
+    -Xms450m \
+    -Xmx450m \
+    -Xmn256m \
+    -Dnacos.standalone=true \
+    -Dserver.port=$PORT \
+    -jar \
+    nacos-server.jar
