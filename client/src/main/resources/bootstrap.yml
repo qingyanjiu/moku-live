@@ -8,11 +8,7 @@ spring:
     check-template: true
   datasource:
     hikari:
-      idle-timeout: 30000
       max-lifetime: 1800000
-      auto-commit: true
-      pool-name: financeLightPoolName
-      connection-test-query: select 1
 
 live:
   client:
