@@ -6,6 +6,13 @@ spring:
   thymeleaf:
     cache: false
     check-template: true
+  datasource:
+    hikari:
+      idle-timeout: 30000
+      max-lifetime: 1800000
+      auto-commit: true
+      pool-name: financeLightPoolName
+      connection-test-query: select 1
 
 live:
   client:
@@ -39,7 +46,7 @@ spring:
     nacos:
       config:
         enabled: true
-        server-addr: https://moku-live-nacos.herokuapp.com:443
+        server-addr: "https://moku-live-nacos.herokuapp.com:443"
         file-extension: yaml
 #        group:
 #        namespace:
@@ -67,8 +74,9 @@ spring:
     nacos:
       config:
         enabled: true
-        server-addr: https://moku-live-nacos.herokuapp.com:443
+        server-addr: "https://moku-live-nacos.herokuapp.com:443"
         file-extension: yaml
+        secret-key:
 #        group:
 #        namespace:
 
