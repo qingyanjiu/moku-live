@@ -197,7 +197,6 @@
                     <ul class="nav">
                         <li><a href="#" onClick="toggleMenu('0')">直播列表</a></li>
                         <li><a href="#myroom" onClick="toggleMenu('1')">我的直播间</a></li>
-                        <li><a href="#myroom" onClick="toggleMenu('2')">我只想看弹幕</a></li>
                         <li><a href="#usercenter" onClick="toggleMenu('9')">
                             <img src="/assets/img/head.jpg" style="height:20px;width:20px;border-radius: 10px"/>
                             <span th:text="直播间设置"></span>
@@ -311,22 +310,6 @@
                 </div>
 
                 <br/>
-                <div class="send" style="text-align:center">
-                    <input placeholder="说点什么?" class="s_txt" type="text" style="width:388px;
-                              height: 34px;
-                              border-radius: 3px;
-                              border: 1px solid rgb(204, 204, 204);
-                              padding-left: 10px;"/>
-                    <input type="button" value="发送弹幕" class="s_sub" style="border: 1px solid rgb(210, 80, 30);color:rgb(230, 80, 30);
-                              border-radius: 3px;
-                              text-align: center;
-                              height: 45px;
-                              margin-left:10px;
-                              margin-bottom:10px;
-                              line-height: 35px;
-                              font-weight:bold;
-                              font-size: 14px;width:159px;background-color:white"/>
-                </div>
             </div>
         </div>
     </div>
@@ -365,7 +348,7 @@
     var username = [[${session.SPRING_SECURITY_CONTEXT.authentication.principal.username}]];
 
     $(function () {
-        $("startLiveButton").click(function () {
+        $("#startLiveButton").click(function () {
             var userName = $(this).data('username');
             startLive(userName);
         });
@@ -382,8 +365,6 @@
             document.location = "/live/toList";
         } else if (obj == '1') {
             document.location = "/live/show?userName=" + username;
-        } else if (obj == '2') {
-            danmuList();
         } else if (obj == '9') {
             $("#myroom").hide();
             $("#list").show();

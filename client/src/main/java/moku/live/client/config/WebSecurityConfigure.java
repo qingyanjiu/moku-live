@@ -80,6 +80,7 @@ public class WebSecurityConfigure extends WebSecurityConfigurerAdapter implement
     public void configure(WebSecurity web) throws Exception {
         //解决静态资源被拦截的问题
         web.ignoring().antMatchers("/assets/**");
+        web.ignoring().antMatchers("/webjars/**");
         web.ignoring().antMatchers("/home_page/**");
         web.ignoring().antMatchers("/home_page2/**");
         web.ignoring().antMatchers("/player/**");

@@ -114,7 +114,6 @@
                         <li><a href="#" onClick="toggleMenu('0')">直播列表</a></li>
                         <li><a href="#register" onClick="toggleMenu('1')">新用户注册</a>
                         </li>
-                        <li th:if="${session.SPRING_SECURITY_CONTEXT != null}"><a href="#myroom" onClick="toggleMenu('2')">我只想看弹幕</a></li>
                         <li id="userTip">
                             <a th:if="${session.SPRING_SECURITY_CONTEXT == null}" href="#login" onClick="toggleMenu('3')">登录我的账号</a>
                             <a th:if="${session.SPRING_SECURITY_CONTEXT != null}" href="#usercenter" onClick="toggleMenu('9')">
@@ -216,7 +215,7 @@
 <script src="/assets/js/bootstrap-collapse.js"></script>
 <script src="/assets/js/bootstrap-carousel.js"></script>
 <script src="/assets/js/bootstrap-typeahead.js"></script>
-<script src="https://cdn.bootcss.com/moment.js/2.18.1/moment.js"></script>
+<script src="/webjars/momentjs/2.24.0/moment.js"></script>
 
 <script th:inline="javascript">
     $(function () {
@@ -239,9 +238,6 @@
             $("#live").hide();
             $("#regi").show();
             $("#cont").hide();
-        }
-        else if (obj == '2') {
-            danmuList();
         }
         else if (obj == '3') {
             $("#login").show();

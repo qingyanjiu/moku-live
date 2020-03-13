@@ -149,7 +149,6 @@
                         <li><a href="#" onClick="toggleMenu('0')">直播列表</a></li>
                         <li><a href="#register" onClick="toggleMenu('1')">新用户注册</a>
                         </li>
-                        <li th:if="${session.SPRING_SECURITY_CONTEXT != null}"><a href="#myroom" onClick="toggleMenu('2')">我只想看弹幕</a></li>
                         <li id="userTip">
                             <a th:if="${session.SPRING_SECURITY_CONTEXT == null}" href="#login" onClick="toggleMenu('3')">登录我的账号</a>
                             <a th:if="${session.SPRING_SECURITY_CONTEXT != null}" href="#mypage" onClick="toggleMenu('9')">
@@ -245,22 +244,6 @@
                 </div>
 
                 <br/>
-                <div class="send" style="text-align:center">
-                    <input placeholder="说点什么?" class="s_txt" type="text" style="width:388px;
-                                      height: 34px;
-                                      border-radius: 3px;
-                                      border: 1px solid rgb(204, 204, 204);
-                                      padding-left: 10px;"/>
-                    <input type="button" value="发送弹幕" class="s_sub" style="border: 1px solid rgb(210, 80, 30);color:rgb(230, 80, 30);
-                                      border-radius: 3px;
-                                      text-align: center;
-                                      height: 45px;
-                                      margin-left:10px;
-                                      margin-bottom:10px;
-                                      line-height: 35px;
-                                      font-weight:bold;
-                                      font-size: 14px;width:159px;background-color:white"/>
-                </div>
             </div>
         </div>
     </div>
@@ -343,9 +326,6 @@
             $("#live").hide();
             $("#regi").show();
             $("#cont").hide();
-        }
-        else if (obj == '2') {
-            danmuList();
         }
         else if (obj == '3') {
             $("#login").show();
