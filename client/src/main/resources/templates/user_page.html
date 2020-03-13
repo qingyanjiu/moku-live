@@ -345,7 +345,7 @@
 <script src="/assets/js/bootstrap-typeahead.js"></script>
 
 <script th:inline="javascript">
-    var username = [[${session.SPRING_SECURITY_CONTEXT.authentication.principal.username}]];
+    var userName = [[${session.SPRING_SECURITY_CONTEXT.authentication.principal.username}]];
 
     $(function () {
         $("#startLiveButton").click(function () {
