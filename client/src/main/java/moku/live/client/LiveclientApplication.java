@@ -1,6 +1,7 @@
 package moku.live.client;
 
 import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ApplicationContext;
@@ -10,7 +11,7 @@ import org.springframework.context.ApplicationContext;
 public class LiveclientApplication {
 
     public static void main(String[] args) {
-        ApplicationContext context = new SpringApplicationBuilder(LiveclientApplication.class).run(args);
+        ApplicationContext context = new SpringApplication(LiveclientApplication.class).run(args);
 //        DbConfig dbConfig = context.getBean(DbConfig.class);
 //
 //        while (true) {
