@@ -12,6 +12,7 @@ public class LiveclientApplication {
 
     public static void main(String[] args) {
         ApplicationContext context = new SpringApplication(LiveclientApplication.class).run(args);
+//        System.out.println(context.getBean("myBean"));
 //        DbConfig dbConfig = context.getBean(DbConfig.class);
 //
 //        while (true) {

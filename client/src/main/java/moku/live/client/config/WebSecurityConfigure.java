@@ -11,6 +11,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 /**
  * Created by user on 2017/5/11.
@@ -49,6 +50,8 @@ public class WebSecurityConfigure extends WebSecurityConfigurerAdapter implement
                 .logoutSuccessUrl("/login")
 //                .logoutSuccessHandler(customLogoutSuccessHandler())
                 .permitAll();
+//        http.addFilterBefore(new ExtraFilter(authenticationManager()), UsernamePasswordAuthenticationFilter.class);
+        http.addFilterBefore(new ExtraAuthFilter(), UsernamePasswordAuthenticationFilter.class);
     }
 
 //    @Bean
