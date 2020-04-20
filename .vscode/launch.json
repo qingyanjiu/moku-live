@@ -1,0 +1,29 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-LiveclientApplication<client>",
+            "request": "launch",
+            "mainClass": "moku.live.client.LiveclientApplication",
+            "projectName": "client",
+            "vmArgs": "-Dspring.profiles.active=dev"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ConfigServerApplication<config-server>",
+            "request": "launch",
+            "mainClass": "moku.live.configserver.ConfigServerApplication",
+            "projectName": "config-server"
+        }
+    ]
+}

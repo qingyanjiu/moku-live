@@ -51,7 +51,7 @@ public class WebSecurityConfigure extends WebSecurityConfigurerAdapter implement
 //                .logoutSuccessHandler(customLogoutSuccessHandler())
                 .permitAll();
 //        http.addFilterBefore(new ExtraFilter(authenticationManager()), UsernamePasswordAuthenticationFilter.class);
-        http.addFilterBefore(new ExtraAuthFilter(), UsernamePasswordAuthenticationFilter.class);
+        // http.addFilterBefore(new ExtraAuthFilter(), UsernamePasswordAuthenticationFilter.class);
     }
 
 //    @Bean
