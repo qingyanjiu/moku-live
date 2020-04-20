@@ -29,3 +29,5 @@ data/
 *.dat
 
 !/nacos/target
+
+.vscode/
