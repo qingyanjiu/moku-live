@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="moku.live.client.mapper.LiveMapper">
+
+    <resultMap id="liveList" type="moku.live.client.vo.LiveInfo">
+        <result property="userName" column="username"/>
+        <result property="trueName" column="true_name"/>
+        <result property="startTime" column="start_time"/>
+        <result property="streamCode" column="streamcode"/>
+        <result property="status" column="status"/>
+        <result property="liveName" column="live_name"/>
+        <result property="password" column="password"/>
+    </resultMap>
+
+    <resultMap id="activeLiveOfUser" type="moku.live.client.vo.LiveInfo">
+        <result property="id" column="id"/>
+        <result property="userId" column="user_id"/>
+        <result property="startTime" column="start_time"/>
+        <result property="endTime" column="end_time"/>
+        <result property="streamCode" column="streamcode"/>
+        <result property="status" column="status"/>
+        <result property="liveName" column="live_name"/>
+        <result property="password" column="password"/>
+    </resultMap>
+
+    <resultMap id="liveByName" type="moku.live.client.vo.LiveInfo">
+        <result property="userId" column="userid"/>
+        <result property="userName" column="username"/>
+        <result property="trueName" column="true_name"/>
+        <result property="startTime" column="start_time"/>
+        <result property="streamCode" column="streamcode"/>
+        <result property="status" column="status"/>
+        <result property="liveName" column="live_name"/>
+        <result property="password" column="password"/>
+    </resultMap>
+
+    <select id="getAll" resultMap="liveList">
+        select * from live_list where status in ('0','9') order by status desc,start_time desc
+    </select>
+
+    <insert id="add" parameterType="moku.live.client.vo.Live">
+        INSERT INTO live_info VALUES(
+            #{id},
+            #{userId},
+            sysdate(),
+            #{endTime},
+            #{streamCode},
+            #{status},
+            #{liveName},
+            #{password}
+        )
+    </insert>
+
+    <update id="end" parameterType="map">
+        update live_info set end_time=sysdate(),status='1' where streamcode=#{streamCode}
+    </update>
+
+    <select id="getActiveLiveOfUser" resultMap="activeLiveOfUser" parameterType="map" >
+        select * from live_list where username=#{userName} and status in ('0','9')
+    </select>
+
+    <select id="getHistoryLivesOfUser" parameterType="map" resultMap="activeLiveOfUser">
+        select * from live_info where user_id=#{userId} order by start_time desc
+    </select>
+
+    <select id="getLiveByName" parameterType="map" resultMap="liveByName">
+        select * from live_list where userid=${userId} and status in ('0','9')
+    </select>
+
+    <update id="updateLiveName" parameterType="map" >
+        update live_info set live_name=#{liveName} where streamcode=#{streamCode}
+    </update>
+
+    <update id="updateLivePassword" parameterType="map" >
+        update live_info set password=#{password} where streamcode=#{streamCode}
+    </update>
+</mapper>

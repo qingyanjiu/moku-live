@@ -59,11 +59,11 @@ public class LiveService {
         return live;
     }
 
-    public List<Live> getHistoryLivesOfUser(Map params){
+    public List<LiveInfo> getHistoryLivesOfUser(Map params){
         return liveMapper.getHistoryLivesOfUser(params);
     }
 
-    public List<Live> getLiveByName(Map params){
+    public List<LiveInfo> getLiveByName(Map params){
         return liveMapper.getLiveByName(params);
     }
 

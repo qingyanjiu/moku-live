@@ -19,6 +19,8 @@ server:
 
 mybatis:
   type-aliases-package: moku.live.client.vo
+  mapper-locations:
+    - "classpath:/mappers/*"
 
 management:
   endpoints:

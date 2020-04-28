@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="moku.live.client.mapper.UserMapper">
+
+    <resultMap id="userInfo" type="moku.live.client.vo.User">
+        <result property="id" column="id"/>
+        <result property="userName" column="username"/>
+        <result property="password" column="password"/>
+        <result property="gender" column="gender"/>
+        <result property="nick" column="nick"/>
+        <result property="registerDate" column="register_date"/>
+        <result property="lastLoginDate" column="last_login_date"/>
+        <result property="trueNameCert" column="true_name_cert"/>
+        <result property="trueName" column="true_name"/>
+        <result property="phoneNumber" column="phone_number"/>
+        <result property="email" column="email"/>
+        <result property="status" column="status"/>
+    </resultMap>
+    
+    <select id="getAll" resultMap="userInfo">
+        SELECT * FROM user_info
+    </select>
+
+    <select id="getOne" resultMap="userInfo">
+        SELECT * FROM user_info WHERE id = #{id}
+    </select>
+
+    <select id="findByName" resultMap="userInfo">
+        SELECT * FROM user_info WHERE username = #{username}
+    </select>
+
+    <insert id="insert" parameterType="moku.live.client.vo.User">
+        INSERT INTO user_info VALUES(
+            #{id},
+            #{userName},
+            #{password},
+            #{gender},
+            #{nick},
+            #{registerDate},
+            #{lastLoginDate},
+            #{trueNameCert},
+            #{trueName},
+            #{phoneNumber},
+            #{email},
+            #{status}
+        )
+    </insert>
+
+    <update id="updateLoginDate" parameterType="map">
+        update user_info set last_login_date=#{date} where id=#{id}
+    </update>
+
+    <update id="changeStatus" parameterType="map">
+        update user_info set status=#{status} where id=#{id}
+    </update>
+
+    <select id="checkName" parameterType="map" resultType="int">
+        select count(id) count from user_info where username=#{userName}
+    </select>
+</mapper>

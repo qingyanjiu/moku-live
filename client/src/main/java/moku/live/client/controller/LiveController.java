@@ -142,7 +142,7 @@ public class LiveController {
 
     @RequestMapping("/history")
     @ResponseBody
-    public List<Live> getHistoryLivesOfUser(String userId) {
+    public List<LiveInfo> getHistoryLivesOfUser(String userId) {
         Map params = new HashMap();
         params.put("userId", userId);
         return liveService.getHistoryLivesOfUser(params);
@@ -150,7 +150,7 @@ public class LiveController {
 
     @RequestMapping("/findByName/{liveName}")
     @ResponseBody
-    public List<Live> getLiveByName(@PathVariable("liveName") String liveName) {
+    public List<LiveInfo> getLiveByName(@PathVariable("liveName") String liveName) {
         Map params = new HashMap();
         params.put("liveName", liveName);
         return liveService.getLiveByName(params);
