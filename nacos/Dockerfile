@@ -1,8 +1,9 @@
 FROM openjdk:8-alpine
-COPY ./nacos /nacos
+COPY . /nacos
 WORKDIR /nacos/target
 ENV HEAP_SIZE=512m
-ENV PORT=30000
+ENV PORT=8848
+EXPOSE $PORT
 CMD java \
     -Xms$HEAP_SIZE \
     -Xmx$HEAP_SIZE \
