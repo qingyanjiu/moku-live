@@ -7,7 +7,7 @@ FROM openjdk:8-alpine
 COPY --from=0 /mokulive/target/*.jar .
 EXPOSE 8000
 CMD java -jar \
--Dapollo.meta=$APOLLO_URL \
--Denv=$ENV \
+-Xms=$HEAP_SIZE \
+-Xmx=$HEAP_SIZE \
 -Dcustom.config.server.url=$CONFIG_SERVER_URL \
 *.jar
