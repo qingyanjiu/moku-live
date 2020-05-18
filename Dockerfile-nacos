@@ -1,7 +1,0 @@
-FROM openjdk:8-alpine
-COPY ./nacos /nacos
-WORKDIR /nacos/bin
-RUN chmod +x ./startup.sh
-EXPOSE 8848
-CMD ./startup.sh -m standalone
-
