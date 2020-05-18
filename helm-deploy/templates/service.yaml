@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mokuliveclient
+  labels:
+    app: mokuliveclient
+spec:
+  type: {{ .Values.service.mokuliveclient.type }}
+  ports:
+    - port: {{ .Values.service.mokuliveclient.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app: mokuliveclient
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: mokuliveclient
+  labels:
+    app: mokuliveclient
+spec:
+  type: {{ .Values.service.mokulivenacos.type }}
+  ports:
+    - port: {{ .Values.service.mokulivenacos.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app: mokuliveclient
