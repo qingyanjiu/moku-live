@@ -6,8 +6,9 @@ RUN mvn package -Dmaven.test.skip=true
 FROM openjdk:8-alpine
 COPY --from=0 /mokulive/client/target/*.jar . 
 EXPOSE 8000
+ENV HEAP_SIZE=512m
 CMD java -jar \
--Xms=$HEAP_SIZE \
--Xmx=$HEAP_SIZE \
+-Xms$HEAP_SIZE \
+-Xmx$HEAP_SIZE \
 -Dcustom.config.server.url=$CONFIG_SERVER_URL \
 *.jar
