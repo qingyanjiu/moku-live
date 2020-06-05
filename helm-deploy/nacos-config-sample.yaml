@@ -1,0 +1,13 @@
+live:
+    server:
+        hlsUrl: http://106.75.119.242:8099/hls/
+        httpflvUrl: http://live-server-default.2886795298-80-simba02.environments.katacoda.com/live?app=live&stream=
+        snapshoturl: http://106.75.119.242:8099/record/
+        streamUrl: rtmp://106.75.119.242/live/
+spring:
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        initialize: false
+        password: 19831226lc
+        url: jdbc:mysql://106.75.119.242/live?useUnicode=true&characterEncoding=utf-8&useSSL=false
+        username: root

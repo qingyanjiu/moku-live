@@ -12,6 +12,8 @@ image:
   mokulivenacos:
     repository: alaien/live.moku.nacos
     tag: ""
+  liveserverdownstream:
+    repository: alaien/live.moku.live-server-nginx-edge
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
@@ -23,6 +25,8 @@ container:
     port: 8000
   mokulivenacos:
     port: 8848
+  liveserverdownstream:
+    port: 80
   livenessProbe:
     initialDelaySeconds: 300
     periodSeconds: 10
@@ -33,6 +37,9 @@ service:
     type: ClusterIP
     port: 80
   mokulivenacos:
+    type: ClusterIP
+    port: 80
+  liveserverdownstream:
     type: ClusterIP
     port: 80
 
@@ -86,6 +93,11 @@ resources:
      memory: 1024Mi
     requests:
      cpu: 100m
+  liveserverdownstream:
+    limits:
+     memory: 1024Mi
+    requests:
+     cpu: 100m  
 
 autoscaling:
   enabled: false

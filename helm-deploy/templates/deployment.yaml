@@ -75,6 +75,77 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: liveserverdownstream
+  labels:
+    app: liveserverdownstream
+spec:
+{{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+{{- end }}
+  selector:
+    matchLabels:
+      app: liveserverdownstream
+  template:
+    metadata:
+    {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+      labels:
+        app: liveserverdownstream
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: ""
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: liveserverdownstream
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.liveserverdownstream.repository }}:{{ .Values.image.liveserverdownstream.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.container.liveserverdownstream.port }}
+              protocol: TCP
+          env:
+          - name: PULL_URL
+            value: 106.75.119.242
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+            initialDelaySeconds: {{ .Values.container.livenessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.container.livenessProbe.periodSeconds }}
+            timeoutSeconds: {{ .Values.container.livenessProbe.timeoutSeconds }}
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+          resources:
+            {{- toYaml .Values.resources.liveserverdownstream | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
   name: mokulivenacos
   labels:
     app: mokulivenacos

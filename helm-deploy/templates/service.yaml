@@ -19,9 +19,9 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: mokuliveclient
+  name: mokulivenacos
   labels:
-    app: mokuliveclient
+    app: mokulivenacos
 spec:
   type: {{ .Values.service.mokulivenacos.type }}
   ports:
@@ -30,4 +30,22 @@ spec:
       protocol: TCP
       name: http
   selector:
-    app: mokuliveclient
+    app: mokulivenacos
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: liveserverdownstream
+  labels:
+    app: liveserverdownstream
+spec:
+  type: {{ .Values.service.liveserverdownstream.type }}
+  ports:
+    - port: {{ .Values.service.liveserverdownstream.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app: liveserverdownstream
