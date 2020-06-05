@@ -41,7 +41,7 @@ spec:
           - name: HEAP_SIZE
             value: 450m
           - name: CONFIG_SERVER_URL
-            value: http://nacos:80
+            value: http://moku-live-nacos.herokuapp.com:80
           - name: PROFILE
             value: prod
           livenessProbe:
