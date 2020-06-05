@@ -33,6 +33,7 @@ public class WebSecurityConfigure extends WebSecurityConfigurerAdapter implement
                 .antMatchers("/profile").permitAll()
                 .antMatchers("/live/toList").permitAll()
                 .antMatchers("/live/show").permitAll()
+                .antMatchers("/live/public-room").permitAll()
                 .antMatchers("/startLive").permitAll()
                 .antMatchers("/endLive").permitAll()
                 .anyRequest().authenticated()

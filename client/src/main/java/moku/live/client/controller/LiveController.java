@@ -39,6 +39,9 @@ public class LiveController {
     @Value("${live.server.hlsUrl}")
     private String hlsUrl;
 
+    @Value("${live.server.public.streamCode}")
+    private String publicStreamCode;
+
     @RequestMapping("/")
     @ResponseBody
     public List<LiveInfo> getAll() {
@@ -70,6 +73,21 @@ public class LiveController {
         model.addAttribute("httpflvUrl", httpflvUrl);
         model.addAttribute("hlsUrl", hlsUrl);
         return "user_page";
+    }
+
+    @RequestMapping("/public-room")
+    public String toPublicRoom(Model model) {
+        String result = "live_room";
+        LiveInfo live = new LiveInfo();
+        live.setUserName("公用账户");
+        live.setUserName("公共直播间");
+        live.setStreamCode(publicStreamCode);
+        model.addAttribute("live", live);
+        model.addAttribute("streamUrl", streamUrl);
+        model.addAttribute("httpflvUrl", httpflvUrl);
+        model.addAttribute("hlsUrl", hlsUrl);
+        model.addAttribute("pass", true);
+        return result;
     }
 
     @RequestMapping("/show")

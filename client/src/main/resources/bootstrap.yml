@@ -72,7 +72,7 @@ spring:
     nacos:
       config:
         enabled: true
-        server-addr: "https://moku-live-nacos.herokuapp.com:443"
+        server-addr: ${custom.config.server.url:https://moku-live-nacos.herokuapp.com:443}
         file-extension: yaml
         secret-key:
 #        group:
